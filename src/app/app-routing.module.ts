@@ -5,6 +5,19 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: 'headphones',
+    loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
+  }
+  ,
+  {
+    path: 'speakers',
+    loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
+  },
+  {
+    path: 'earphones',
+    loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
   }
 ];
 

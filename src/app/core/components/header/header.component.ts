@@ -24,8 +24,6 @@ export class HeaderComponent implements OnInit {
     }
   ];
 
-  selectedNav: Route = this.navItems[0];
-
   constructor() { }
 
   ngOnInit(): void {
