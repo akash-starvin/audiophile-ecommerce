@@ -27,7 +27,7 @@
   justify-content: flex-end;
 }
 
-.flex-wrap{
+.flex-wrap {
   flex-wrap: wrap;
 }
 
@@ -62,13 +62,20 @@
   cursor: pointer;
 }
 
-.remove-input-class{
+.remove-input-class {
   outline: none;
   border: none;
 }
 
 .remove-list-bullets {
   list-style-type: none;
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 .cursor-pointer {
@@ -83,15 +90,15 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-.grid-center{
+.grid-center {
   display: grid;
   place-items: center;
 }
 
-.p-0{
+.p-0 {
   padding: 0;
 }
 
-.m-0{
+.m-0 {
   margin: 0;
 }
