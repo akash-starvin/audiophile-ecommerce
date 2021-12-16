@@ -1,0 +1,29 @@
+@use "../assets/sass/variables.scss";
+
+.container {
+
+  &__content {
+    width: 100vw;
+    padding: 0 24px;
+  }
+
+  &--black{
+    background-color: variables.$background-black;
+  }
+
+  &--grey{
+    background-color: variables.$background-grey;
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  .container {
+    &__content {
+      width: 70vw;
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+}
