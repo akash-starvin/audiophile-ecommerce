@@ -1,0 +1,77 @@
+@use "../../../../assets/sass/common.scss";
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+
+.container {
+  padding: 32px 0;
+  background-color: variables.$background-black;
+
+  &__btn-menu {
+  }
+
+  &__img-logo {
+  }
+
+  &__nav-wrapper {
+    display: none;
+    button {
+    }
+  }
+
+  &__cart {
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .container {
+    &__btn-menu {
+    }
+
+    &__img-logo {
+    }
+
+    &__nav-wrapper {
+      button {
+      }
+    }
+
+    &__cart {
+    }
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  .container {
+    &__btn-menu {
+      display: none;
+    }
+
+    &__img-logo {
+    }
+
+    &__nav-wrapper {
+      display: flex;
+      gap: 36px;
+
+      .nav-item {
+        @include mixins.text(15px, 700, variables.$text-white);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .nav-item:hover{
+        @include mixins.transition();
+        color: variables.$theme-orange;
+      }
+
+      .nav-item--active {
+        color: variables.$theme-orange;
+      }
+    }
+
+    &__cart {
+
+
+    }
+  }
+}

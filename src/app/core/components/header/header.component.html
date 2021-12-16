@@ -1,1 +1,19 @@
-<p>header works!</p>
+<div class="container d-flex space-between">
+  <button class="container__btn-menu remove-btn-class">
+    <img src="../../../../assets/icons/icon-hamburger.svg" alt="menu" height="15"/>
+  </button>
+  <img
+    src="../../../../assets/icons/logo.svg"
+    alt="logo"
+    class="container__img-logo"
+    height="25"
+  />
+  <ul class="container__nav-wrapper">
+    <li *ngFor="let nav of navItems" class="nav-item remove-list-bullets">
+      <a [routerLink]="[nav.route]" routerLinkActive="nav-item--active" >{{ nav.name }}</a>
+    </li>
+  </ul>
+  <button class="container__cart remove-btn-class">
+    <img src="../../../../assets/icons/icon-cart.svg" alt="cart" height="25"/>
+  </button>
+</div>
