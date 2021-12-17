@@ -1,0 +1,103 @@
+@use "../../../../assets/sass/common.scss";
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+
+section {
+  display: flex;
+  justify-content: space-around;
+  background-color: variables.$background-black;
+}
+
+.container {
+  max-width: variables.$mobile-max-width;
+  position: relative;
+
+  &__background {
+    width: -webkit-fill-available;
+  }
+
+  &__detail {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    &__new-product {
+      @include mixins.text(14px, 400, variables.$text-white);
+      opacity: 0.5;
+      letter-spacing: 10px;
+      line-height: 17px;
+    }
+    &__product-name {
+      @include mixins.text(36px, 500, variables.$text-white);
+      letter-spacing: 1.29px;
+      line-height: 40px;
+      text-transform: uppercase;
+      margin: 18px auto 24px;
+      max-width: 328px;
+    }
+
+    &__description {
+      @include mixins.text(15px, 400, variables.$text-white);
+      opacity: 0.75;
+      line-height: 25px;
+      max-width: 328px;
+    }
+    &__see-product {
+      @include mixins.button(fill, variables.$theme-orange);
+      margin-top: 28px;
+    }
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .container {
+    &__background {
+      max-width: 97vw;
+    }
+
+    &__detail {
+      &__product-name {
+        @include mixins.text(56px, 500, variables.$text-white);
+        letter-spacing: 2px;
+        line-height: 58px;
+        margin: 26px auto 24px;
+        max-width: 370px;
+      }
+
+      &__description {
+        max-width: 370px;
+      }
+
+      &__see-product {
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  .container {
+    &__background {
+      max-width: variables.$tablet-max-width;
+    }
+
+    &__detail {
+      left: 0;
+      top: 15%;
+      transform: none;
+      text-align: left;
+
+      &__product-name {
+        @include mixins.text(56px, 500, variables.$text-white);
+        margin: 26px auto 24px;
+        max-width: 392px;
+      }
+
+      &__description {
+        max-width: 392px;
+      }
+    }
+  }
+}

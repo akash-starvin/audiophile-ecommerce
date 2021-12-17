@@ -1,0 +1,19 @@
+<section>
+  <div class="container">
+    <picture>
+      <source [srcset]="data.image.desktop" media="(min-width: 1200px)" />
+      <source [srcset]="data.image.tablet" media="(min-width: 768px)" />
+      <img
+        [src]="data.image.mobile"
+        alt="banner"
+        class="container__background"
+      />
+    </picture>
+    <div class="container__detail">
+      <h5 class="container__detail__new-product">NEW PRODUCT</h5>
+      <h1 class="container__detail__product-name">{{ data.name }}</h1>
+      <p class="container__detail__description">{{ data.description }}</p>
+      <button class="container__detail__see-product">See Product</button>
+    </div>
+  </div>
+</section>
