@@ -7,16 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
-    path: 'headphones',
-    loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
-  }
-  ,
-  {
-    path: 'speakers',
-    loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
-  },
-  {
-    path: 'earphones',
+    path: ':category',
     loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
   }
 ];
