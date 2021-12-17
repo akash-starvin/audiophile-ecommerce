@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Constants } from 'src/app/core/Constants/Constants';
 
 @Component({
   selector: 'home-banner',
