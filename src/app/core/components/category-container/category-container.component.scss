@@ -1,0 +1,64 @@
+@use "../../../../assets/sass/common.scss";
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin-bottom: 60px;
+
+  &__card {
+    height: calc(100%-70px);
+    width: -webkit-fill-available;
+    background-color: variables.$background-grey;
+    text-align: center;
+    margin-bottom: 14px;
+    border-radius: 8px;
+
+    &__image {
+      height: 138px;
+      width: 144px;
+      transform: translateY(-40%);
+    }
+
+    &__title {
+      @include mixins.text(15px, 500, variables.$text-black);
+      letter-spacing: 1.07px;
+      line-height: 18px;
+      text-transform: uppercase;
+      margin-top: -60px; // subtract half of the image size
+    }
+
+    &__btn-shop {
+      padding: 19px 0 24px;
+      span {
+        @include mixins.text(13px, 400, variables.$text-black);
+        opacity: 0.5;
+        letter-spacing: 1px;
+        line-height: 16px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  section {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  .container__card__title {
+    @include mixins.text(18px, 500, variables.$text-black);
+  }
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Route } from '../../interface/route';
+import { Constants } from '../../constants/Constants';
+import { Menu } from '../../interface/menu';
 
 @Component({
   selector: 'header',
@@ -8,22 +9,7 @@ import { Route } from '../../interface/route';
 })
 export class HeaderComponent implements OnInit {
 
-  navItems: Route[] = [
-    {
-      route: '/',
-      name: 'home'
-    },{
-      route: '/headphones',
-      name: 'headphones'
-    },{
-      route: '/speakers',
-      name: 'speakers'
-    },{
-      route: '/earphones',
-      name: 'earphones'
-    }
-  ];
-
+  navItems: Menu[] = Constants.NavigationMenu;
   constructor() { }
 
   ngOnInit(): void {

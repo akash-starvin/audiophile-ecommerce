@@ -1,0 +1,27 @@
+@use "../../../../assets/sass/variables.scss";
+
+section {
+  margin: 90px 20px 0;
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  section {
+    margin: 120px 40px 0;
+  }
+
+  .container {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+
+  section {
+    margin: 120px auto 0;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: variables.$tablet-max-width;
+  }
+}
