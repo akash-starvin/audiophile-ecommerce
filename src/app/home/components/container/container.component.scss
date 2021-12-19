@@ -4,6 +4,10 @@ section {
   margin: 90px 20px 0;
 }
 
+.container {
+  max-width: variables.$mobile-max-width;
+}
+
 @media screen and (min-width: variables.$tablet-screen-size) {
   section {
     margin: 120px 40px 0;
@@ -15,13 +19,12 @@ section {
 }
 
 @media screen and (min-width: variables.$desktop-screen-size) {
-
   section {
     margin: 120px auto 0;
   }
 
   .container {
-    margin: 0 auto;
     width: variables.$tablet-max-width;
+    margin: 0 auto;
   }
 }

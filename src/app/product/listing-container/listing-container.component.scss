@@ -1,0 +1,16 @@
+@use "../../../assets/sass/variables.scss";
+
+section {
+  background-color: variables.$background-black;
+}
+
+.container {
+  max-width: variables.$mobile-max-width;
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .container {
+    max-width: variables.$tablet-max-width;
+    margin: 0 auto;
+  }
+}

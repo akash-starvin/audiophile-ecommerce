@@ -9,7 +9,7 @@ section {
 }
 
 .container {
-  // max-width: variables.$mobile-max-width;
+  max-width: variables.$mobile-max-width;
   position: relative;
 
   &__background {
@@ -80,7 +80,7 @@ section {
 @media screen and (min-width: variables.$desktop-screen-size) {
   .container {
     &__background {
-      // max-width: variables.$tablet-max-width;
+      max-width: variables.$tablet-max-width;
     }
 
     &__detail {
