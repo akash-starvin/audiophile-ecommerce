@@ -1,6 +1,10 @@
 @use "../../../assets/sass/mixins.scss";
 @use "../../../assets/sass/variables.scss";
 
+.container {
+  background-color: variables.$background-black;
+}
+
 .heading-text {
   @include mixins.text(28px, 400);
   letter-spacing: 2px;
