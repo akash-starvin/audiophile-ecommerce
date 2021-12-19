@@ -9,11 +9,11 @@ section {
 }
 
 .container {
-  max-width: variables.$mobile-max-width;
+  // max-width: variables.$mobile-max-width;
   position: relative;
 
   &__background {
-    width: -webkit-fill-available;
+    width: 100vw;
   }
 
   &__detail {
@@ -54,7 +54,7 @@ section {
 @media screen and (min-width: variables.$tablet-screen-size) {
   .container {
     &__background {
-      max-width: 97vw;
+      max-width: 70vw;
     }
 
     &__detail {
@@ -80,7 +80,7 @@ section {
 @media screen and (min-width: variables.$desktop-screen-size) {
   .container {
     &__background {
-      max-width: variables.$tablet-max-width;
+      // max-width: variables.$tablet-max-width;
     }
 
     &__detail {

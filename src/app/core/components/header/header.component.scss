@@ -7,7 +7,7 @@ section {
 }
 
 .container {
-  max-width: variables.$mobile-max-width;
+  // max-width: variables.$mobile-max-width;
   padding: 32px 24px 36px;
   border-bottom: 1px solid variables.$border;
 
@@ -18,8 +18,8 @@ section {
 
 @media screen and (min-width: variables.$desktop-screen-size) {
   .container {
-    width: variables.$tablet-max-width;
-    margin: 0 auto;
+    // width: variables.$tablet-max-width;
+    // margin: 0 auto;
     padding: 32px 0;
 
     &__btn-menu {
