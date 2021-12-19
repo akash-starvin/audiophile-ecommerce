@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListingContainerComponent } from './listing-container/listing-container.component';
+import { ListingContainerComponent } from './components/listing-container/listing-container.component';
 
 const routes: Routes = [
   {

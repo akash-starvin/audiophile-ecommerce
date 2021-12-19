@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProductRoutingModule } from './product-routing.module';
-import { ListingContainerComponent } from './listing-container/listing-container.component';
-import { CategoryBannerComponent } from './category-banner/category-banner.component';
+import { ListingContainerComponent } from './components/listing-container/listing-container.component';
+import { CategoryBannerComponent } from './components/category-banner/category-banner.component';
+import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { CategoryBannerComponent } from './category-banner/category-banner.compo
   ],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    CoreModule
   ]
 })
 export class ProductModule { }
