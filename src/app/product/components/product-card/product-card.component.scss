@@ -1,6 +1,5 @@
 @use "../../../../assets/sass/mixins.scss";
 @use "../../../../assets/sass/variables.scss";
-@use "../../../../assets/sass/common.scss";
 
 .container {
   margin-bottom: 120px;
@@ -89,12 +88,9 @@
     }
 
     .buttons-wrapper{
+      display: flex;
       margin-top: 34px;
     }
-  }
-  span:focus {
-    outline: 0 !important;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
   }
 }
 
