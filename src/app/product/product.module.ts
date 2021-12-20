@@ -5,12 +5,14 @@ import { ProductRoutingModule } from './product-routing.module';
 import { ListingContainerComponent } from './components/listing-container/listing-container.component';
 import { CategoryBannerComponent } from './components/category-banner/category-banner.component';
 import { CoreModule } from '../core/core.module';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 
 @NgModule({
   declarations: [
     ListingContainerComponent,
-    CategoryBannerComponent
+    CategoryBannerComponent,
+    ProductCardComponent
   ],
   imports: [
     CommonModule,

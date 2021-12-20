@@ -1,0 +1,17 @@
+<div class="container">
+  <picture>
+    <source [srcset]="data.categoryImage.desktop" media="(min-width: 1200px)" />
+    <source [srcset]="data.categoryImage.tablet" media="(min-width: 768px)" />
+    <img
+      [src]="data.categoryImage.mobile"
+      alt="product-image"
+      class="container__product-image"
+    />
+  </picture>
+  <div class="container__detail">
+    <h5 *ngIf="data.new" class="container__detail__new-product">NEW PRODUCT</h5>
+    <h1 class="container__detail__product-name">{{ data.name }}</h1>
+    <p class="container__detail__description">{{ data.description }}</p>
+    <button class="container__detail__see-product">See Product</button>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+
+.container {
+  margin-bottom: 120px;
+
+  &__product-image {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  &__detail {
+    margin-top: 32px;
+    text-align: center;
+
+    &__new-product {
+      @include mixins.text(14px, 500, variables.$theme-orange);
+      letter-spacing: 10px;
+      line-height: 17px;
+    }
+
+    &__product-name {
+      @include mixins.text(28px, 600, variables.$text-black);
+      letter-spacing: 1px;
+      line-height: 34px;
+      margin: 26px 0 24px;
+      text-transform: uppercase;
+    }
+
+    &__description {
+      @include mixins.text(15px, 400, variables.$text-black);
+      opacity: 0.5;
+      line-height: 25px;
+      margin-bottom: 24px;
+    }
+
+    &__see-product {
+      @include mixins.button(fill, variables.$theme-orange);
+    }
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .container {
+    &__detail {
+      margin: 52px 60px 0;
+
+      &__product-name {
+        @include mixins.text(40px, 600, variables.$text-black);
+        letter-spacing: 1.43px;
+        line-height: 44px;
+        margin: 18px auto 32px;
+        width: 50vw;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+
+    &__product-image {
+      height: 560px;
+      width: 540px;
+    }
+
+    &__detail {
+      margin: auto 0;
+      text-align: left;
+      max-width: 450px;
+
+      &__product-name {
+        width: auto;
+      }
+
+      &__description {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

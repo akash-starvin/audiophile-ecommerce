@@ -12,6 +12,7 @@ export class ListingContainerComponent implements OnInit {
   URL_PRODUCT_JSON: string = '../../../../assets/json/products.json';
   productCategory: string = '';
   jsonResponse: Product[] = [];
+  showProducts: Product[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -19,16 +20,25 @@ export class ListingContainerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.getAllProductData(this.URL_PRODUCT_JSON);
+
     this.route?.parent?.url.subscribe((url) => {
       this.productCategory = url[0].path;
+      this.filterBasedOnCategory(this.productCategory);
     });
-    this.getAllProductData(this.URL_PRODUCT_JSON);
   }
 
   getAllProductData(url: string) {
     this.productDataService.getAllProductData(url).subscribe((data) => {
       this.jsonResponse = data;
-      console.log(data);
+      this.filterBasedOnCategory(this.productCategory);
     });
+  }
+
+  filterBasedOnCategory(category: string) {
+    this.showProducts = this.jsonResponse.filter(
+      (product) => category === product.category
+    );
+    this.showProducts.reverse();
   }
 }

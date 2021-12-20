@@ -5,12 +5,31 @@ section {
 }
 
 .container {
+  margin: 0 20px;
   max-width: variables.$mobile-max-width;
+
+  &__product-card-wrapper{
+    margin-top: 64px;
+  }
 }
 
 @media screen and (min-width: variables.$tablet-screen-size) {
   .container {
+    margin: 0 40px;
+
+    &__product-card-wrapper{
+      margin-top: 120px;
+    }
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  .container {
     max-width: variables.$tablet-max-width;
     margin: 0 auto;
+
+    &__product-card-wrapper{
+      margin-top: 160px;
+    }
   }
 }
