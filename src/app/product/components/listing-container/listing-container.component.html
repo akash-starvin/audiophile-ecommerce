@@ -5,8 +5,9 @@
 <div class="container">
   <div *ngIf="showProducts" class="container__product-card-wrapper">
     <product-card
-      *ngFor="let card of showProducts"
+      *ngFor="let card of showProducts; let i = index"
       [data]="card"
+      [rowReverse]="i % 2 === 0 ? false : true"
     ></product-card>
   </div>
   <category-container></category-container>

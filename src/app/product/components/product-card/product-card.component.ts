@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductCardComponent implements OnInit {
 
   @Input() data: any;
+  @Input() rowReverse: any;
 
   constructor() { }
 
