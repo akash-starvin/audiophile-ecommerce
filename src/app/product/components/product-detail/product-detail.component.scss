@@ -1,0 +1,44 @@
+@use "../../../../assets/sass/variables.scss";
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/common.scss";
+
+.container {
+  margin: 0 20px;
+  max-width: variables.$mobile-max-width;
+
+  &__back-btn {
+    @include mixins.text(15px, 400, variables.$text-black);
+    opacity: 0.5;
+    line-height: 25px;
+    margin-top: 16px;
+  }
+
+  &__product-card-wrapper {
+    margin-top: 24px;
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .container {
+    margin: 0 40px;
+
+    &__back-btn {
+      margin-top: 33px;
+    }
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  .container {
+    max-width: variables.$tablet-max-width;
+    margin: 0 auto;
+
+    &__back-btn {
+      margin-top: 79px;
+    }
+
+    &__product-card-wrapper {
+      margin-top: 56px;
+    }
+  }
+}

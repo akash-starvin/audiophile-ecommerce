@@ -1,4 +1,4 @@
-<div class="container" [ngClass]="{'row-reverse': rowReverse}">
+<div class="container" [ngClass]="{ 'row-reverse': rowReverse }">
   <picture>
     <source [srcset]="data.categoryImage.desktop" media="(min-width: 1200px)" />
     <source [srcset]="data.categoryImage.tablet" media="(min-width: 768px)" />
@@ -12,6 +12,24 @@
     <h5 *ngIf="data.new" class="container__detail__new-product">NEW PRODUCT</h5>
     <h1 class="container__detail__product-name">{{ data.name }}</h1>
     <p class="container__detail__description">{{ data.description }}</p>
-    <button class="container__detail__see-product">See Product</button>
+    <button
+      *ngIf="!isDetailView"
+      class="container__detail__see-product"
+      [routerLink]="['/' + data.category, data.slug]"
+      (click)="updateSelectedProduct()"
+    >
+      See Product
+    </button>
+    <div *ngIf="isDetailView" class="add-to-cart-wrapper">
+      <h4 class="price-text">{{ data.price }}</h4>
+      <div class="d-flex buttons-wrapper">
+        <div class="update-count-wrapper">
+          <span class="btn" (click)="updateCount(-1)">-</span>
+          <span class="count-text">{{ productCount }}</span>
+          <span class="btn" (click)="updateCount(1)">+</span>
+        </div>
+        <button class="add-to-cart-btn"  (click)="updateCount(0)">Add to cart</button>
+      </div>
+    </div>
   </div>
 </div>

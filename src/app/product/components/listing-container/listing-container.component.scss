@@ -1,9 +1,5 @@
 @use "../../../../assets/sass/variables.scss";
 
-section {
-  background-color: variables.$background-black;
-}
-
 .container {
   margin: 0 20px;
   max-width: variables.$mobile-max-width;

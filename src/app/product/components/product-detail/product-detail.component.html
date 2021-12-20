@@ -1,0 +1,15 @@
+<div class="container">
+  <button
+    class="container__back-btn remove-btn-class"
+    (click)="goToPreviousPage()"
+  >
+    Go back
+  </button>
+  <div class="container__product-card-wrapper">
+    <product-card
+      [data]="productData"
+      [rowReverse]="false"
+      [isDetailView]="true"
+    ></product-card>
+  </div>
+</div>

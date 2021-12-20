@@ -8,6 +8,7 @@
       *ngFor="let card of showProducts; let i = index"
       [data]="card"
       [rowReverse]="i % 2 === 0 ? false : true"
+      [isDetailView]="false"
     ></product-card>
   </div>
   <category-container></category-container>

@@ -1,5 +1,6 @@
 @use "../../../../assets/sass/mixins.scss";
 @use "../../../../assets/sass/variables.scss";
+@use "../../../../assets/sass/common.scss";
 
 .container {
   margin-bottom: 120px;
@@ -40,6 +41,61 @@
       @include mixins.button(fill, variables.$theme-orange);
     }
   }
+
+  &__detail .add-to-cart-wrapper {
+    .price-text {
+      @include mixins.text(18px, 500, variables.$text-black);
+      letter-spacing: 1.29px;
+      line-height: 22px;
+      text-align: left;
+    }
+
+    .update-count-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 48px;
+      width: 120px;
+      background-color: variables.$background-grey;
+    }
+
+    .update-count-wrapper span,
+    .update-count-wrapper .count-text {
+      @include mixins.text(13px, 400, variables.$text-black);
+      opacity: 0.25;
+      letter-spacing: 1px;
+      line-height: 16px;
+      text-align: center;
+    }
+
+    .update-count-wrapper .count-text {
+      opacity: 1;
+      font-weight: 500;
+    }
+
+    .update-count-wrapper .btn {
+      padding: 15px;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+        color: variables.$theme-orange;
+        background-color: darken(variables.$background-grey, 10%);
+      }
+    }
+
+    .add-to-cart-btn {
+      @include mixins.button(fill, variables.$theme-orange);
+      margin-left: 16px;
+    }
+
+    .buttons-wrapper{
+      margin-top: 34px;
+    }
+  }
+  span:focus {
+    outline: 0 !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+  }
 }
 
 @media screen and (min-width: variables.$tablet-screen-size) {
@@ -53,6 +109,17 @@
         line-height: 44px;
         margin: 18px auto 32px;
         width: 50vw;
+      }
+    }
+
+    &__detail .add-to-cart-wrapper {
+      .price-text {
+        text-align: center;
+      }
+
+      .buttons-wrapper {
+        margin-top: 34px;
+        justify-content: center;
       }
     }
   }
@@ -82,9 +149,18 @@
         margin-bottom: 40px;
       }
     }
+
+    &__detail .add-to-cart-wrapper .price-text {
+      text-align: left;
+    }
+
+    &__detail .add-to-cart-wrapper .buttons-wrapper {
+      margin-top: 50px;
+      justify-content: start;
+    }
   }
 
-  .row-reverse{
+  .row-reverse {
     flex-direction: row-reverse;
   }
 }

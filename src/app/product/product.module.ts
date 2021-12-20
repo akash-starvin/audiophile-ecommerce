@@ -6,13 +6,15 @@ import { ListingContainerComponent } from './components/listing-container/listin
 import { CategoryBannerComponent } from './components/category-banner/category-banner.component';
 import { CoreModule } from '../core/core.module';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 
 @NgModule({
   declarations: [
     ListingContainerComponent,
     CategoryBannerComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductDetailComponent
   ],
   imports: [
     CommonModule,
