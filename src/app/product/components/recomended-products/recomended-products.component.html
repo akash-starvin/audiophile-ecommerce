@@ -1,0 +1,18 @@
+<section>
+  <h1 class="section__title">you may also like</h1>
+  <div class="d-flex">
+    <div *ngFor="let item of products" class="container">
+      <picture>
+        <source [srcset]="item.image.desktop" media="(min-width: 1200px)" />
+        <source [srcset]="item.image.tablet" media="(min-width: 768px)" />
+        <img
+          [src]="item.image.mobile"
+          alt="product-image"
+          class="container__product-image"
+        />
+      </picture>
+      <h1 class="container__title">{{ item.name }}</h1>
+      <button class="container__btn">See Product</button>
+    </div>
+  </div>
+</section>

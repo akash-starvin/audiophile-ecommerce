@@ -1,0 +1,75 @@
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+
+section {
+  margin: 120px 0;
+}
+
+.section__title {
+  @include mixins.text(24px, 500, variables.$text-black);
+  letter-spacing: 0.86px;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 56px;
+
+  &__product-image {
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  &__title {
+    @include mixins.text(24px, 500, variables.$text-black);
+    letter-spacing: 1.71px;
+    line-height: 29px;
+    margin: 32px auto 26px;
+  }
+
+  &__btn {
+    @include mixins.button(fill, variables.$theme-orange);
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .section__title {
+    @include mixins.text(32px, 500, variables.$text-black);
+    letter-spacing: 1.14px;
+    margin-bottom: 40px;
+  }
+
+  .container {
+    margin-bottom: 0;
+
+    &__title {
+      margin: 40px auto 36px;
+    }
+  }
+
+  .d-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 11px;
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  section {
+    margin: 160px 0;
+  }
+
+  .section__title {
+    margin-bottom: 64px;
+  }
+
+  .d-flex {
+    gap: 30px;
+  }
+}
