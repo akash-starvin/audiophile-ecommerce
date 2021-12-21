@@ -1,47 +1,46 @@
-@use "../../../../assets/sass/common.scss";
 @use "../../../../assets/sass/mixins.scss";
 @use "../../../../assets/sass/variables.scss";
 
 section {
   display: flex;
   flex-direction: column;
-  margin: 90px 20px 0;
+  margin: 140px 20px 60px;
 }
 
 .container {
-  margin-bottom: 60px;
+  height: calc(100%-70px);
+  width: -webkit-fill-available;
+  background-color: variables.$background-grey;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 80px;
 
-  &__card {
-    height: calc(100%-70px);
-    width: -webkit-fill-available;
-    background-color: variables.$background-grey;
-    text-align: center;
-    margin-bottom: 14px;
-    border-radius: 8px;
+  &__image {
+    height: 138px;
+    width: 144px;
+    transform: translateY(-40%);
+  }
 
-    &__image {
-      height: 138px;
-      width: 144px;
-      transform: translateY(-40%);
-    }
+  &__title {
+    @include mixins.text(15px, 500, variables.$text-black);
+    letter-spacing: 1.07px;
+    line-height: 18px;
+    text-transform: uppercase;
+    margin-top: -60px; // subtract half of the image size
+  }
 
-    &__title {
-      @include mixins.text(15px, 500, variables.$text-black);
-      letter-spacing: 1.07px;
-      line-height: 18px;
-      text-transform: uppercase;
-      margin-top: -60px; // subtract half of the image size
-    }
+  &__btn-shop {
+    padding: 19px 0 24px;
+    border: none;
+    outline: none;
+    background-color: transparent;
 
-    &__btn-shop {
-      padding: 19px 0 24px;
-      span {
-        @include mixins.text(13px, 400, variables.$text-black);
-        opacity: 0.5;
-        letter-spacing: 1px;
-        line-height: 16px;
-        margin-right: 10px;
-      }
+    span {
+      @include mixins.text(13px, 400, variables.$text-black);
+      opacity: 0.5;
+      letter-spacing: 1px;
+      line-height: 16px;
+      margin-right: 10px;
     }
   }
 }
@@ -51,21 +50,21 @@ section {
     flex-direction: row;
     justify-content: space-between;
     gap: 30px;
-    margin: 120px 40px 0;
+    margin: 180px auto 120px;
   }
 
   .container {
     width: 100%;
+    margin-bottom: 0;
   }
 }
 
 @media screen and (min-width: variables.$desktop-screen-size) {
-
   section {
-    margin: 120px auto 0;
+    margin: 180px auto 120px;
   }
 
-  .container__card__title {
+  .container__title {
     @include mixins.text(18px, 500, variables.$text-black);
   }
 }

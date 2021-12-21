@@ -1,19 +1,14 @@
 <section>
   <div *ngFor="let item of categoryList" class="container">
-    <div class="container__card">
-      <img [src]="item.image" alt="category" class="container__card__image" />
-      <h5 class="container__card__title">{{ item.name }}</h5>
-      <button
-        class="container__card__btn-shop remove-btn-class"
-        [routerLink]="[item.route]"
-      >
-        <span>SHOP</span
-        ><img
-          src="../../../../assets/icons/icon-arrow-right.svg"
-          alt="arrow"
-          height="10"
-        />
-      </button>
-    </div>
+    <img [src]="item.image" alt="category" class="container__image" />
+    <h5 class="container__title">{{ item.name }}</h5>
+    <button class="container__btn-shop" [routerLink]="[item.route]">
+      <span>SHOP</span
+      ><img
+        src="../../../../assets/icons/icon-arrow-right.svg"
+        alt="arrow"
+        height="10"
+      />
+    </button>
   </div>
 </section>
