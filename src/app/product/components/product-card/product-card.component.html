@@ -21,12 +21,12 @@
       See Product
     </button>
     <div *ngIf="isDetailView" class="add-to-cart-wrapper">
-      <h4 class="price-text">{{ data.price }}</h4>
-      <div class="d-flex buttons-wrapper">
+      <h4 class="price-text">{{ data.price | currency }}</h4>
+      <div class="buttons-wrapper">
         <div class="update-count-wrapper">
-          <span class="btn" (click)="updateCount(-1)">-</span>
+          <button class="btn" (click)="updateCount(-1)">-</button>
           <span class="count-text">{{ productCount }}</span>
-          <span class="btn" (click)="updateCount(1)">+</span>
+          <button class="btn" (click)="updateCount(1)">+</button>
         </div>
         <button class="add-to-cart-btn"  (click)="updateCount(0)">Add to cart</button>
       </div>

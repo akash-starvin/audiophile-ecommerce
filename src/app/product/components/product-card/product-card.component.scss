@@ -58,25 +58,23 @@
       background-color: variables.$background-grey;
     }
 
-    .update-count-wrapper span,
     .update-count-wrapper .count-text {
-      @include mixins.text(13px, 400, variables.$text-black);
-      opacity: 0.25;
+      @include mixins.text(13px, 500, variables.$text-black);
+      opacity: 1;
       letter-spacing: 1px;
       line-height: 16px;
       text-align: center;
     }
 
-    .update-count-wrapper .count-text {
-      opacity: 1;
-      font-weight: 500;
-    }
-
     .update-count-wrapper .btn {
+      @include mixins.text(13px, 400, variables.$text-black);
+      line-height: 16px;
       padding: 15px;
       cursor: pointer;
+      border: none;
+      outline: none;
+      background-color: transparent;
       &:hover {
-        opacity: 1;
         color: variables.$theme-orange;
         background-color: darken(variables.$background-grey, 10%);
       }
@@ -87,7 +85,7 @@
       margin-left: 16px;
     }
 
-    .buttons-wrapper{
+    .buttons-wrapper {
       display: flex;
       margin-top: 34px;
     }

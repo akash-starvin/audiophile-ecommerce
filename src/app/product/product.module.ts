@@ -7,14 +7,15 @@ import { CategoryBannerComponent } from './components/category-banner/category-b
 import { CoreModule } from '../core/core.module';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-
+import { CurrencyPipe } from './pipes/currency.pipe';
 
 @NgModule({
   declarations: [
     ListingContainerComponent,
     CategoryBannerComponent,
     ProductCardComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    CurrencyPipe
   ],
   imports: [
     CommonModule,
