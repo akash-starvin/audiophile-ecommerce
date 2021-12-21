@@ -40,23 +40,23 @@
         "item": "Travel pouch"
       }
     ],
-    "gallery": {
-      "first": {
+    "gallery": [
+      {
         "mobile": "../../assets/images/product-yx1-earphones/mobile/image-gallery-1.jpg",
         "tablet": "../../assets/images/product-yx1-earphones/tablet/image-gallery-1.jpg",
         "desktop": "../../assets/images/product-yx1-earphones/desktop/image-gallery-1.jpg"
       },
-      "second": {
+      {
         "mobile": "../../assets/images/product-yx1-earphones/mobile/image-gallery-2.jpg",
         "tablet": "../../assets/images/product-yx1-earphones/tablet/image-gallery-2.jpg",
         "desktop": "../../assets/images/product-yx1-earphones/desktop/image-gallery-2.jpg"
       },
-      "third": {
+      {
         "mobile": "../../assets/images/product-yx1-earphones/mobile/image-gallery-3.jpg",
         "tablet": "../../assets/images/product-yx1-earphones/tablet/image-gallery-3.jpg",
         "desktop": "../../assets/images/product-yx1-earphones/desktop/image-gallery-3.jpg"
       }
-    },
+    ],
     "others": [
       {
         "slug": "xx99-mark-one-headphones",
@@ -124,23 +124,23 @@
         "item": "3.5mm 5m audio cable"
       }
     ],
-    "gallery": {
-      "first": {
+    "gallery": [
+      {
         "mobile": "../../assets/images/product-xx59-headphones/mobile/image-gallery-1.jpg",
         "tablet": "../../assets/images/product-xx59-headphones/tablet/image-gallery-1.jpg",
         "desktop": "../../assets/images/product-xx59-headphones/desktop/image-gallery-1.jpg"
       },
-      "second": {
+      {
         "mobile": "../../assets/images/product-xx59-headphones/mobile/image-gallery-2.jpg",
         "tablet": "../../assets/images/product-xx59-headphones/tablet/image-gallery-2.jpg",
         "desktop": "../../assets/images/product-xx59-headphones/desktop/image-gallery-2.jpg"
       },
-      "third": {
+      {
         "mobile": "../../assets/images/product-xx59-headphones/mobile/image-gallery-3.jpg",
         "tablet": "../../assets/images/product-xx59-headphones/tablet/image-gallery-3.jpg",
         "desktop": "../../assets/images/product-xx59-headphones/desktop/image-gallery-3.jpg"
       }
-    },
+    ],
     "others": [
       {
         "slug": "xx99-mark-two-headphones",
@@ -208,23 +208,23 @@
         "item": "3.5mm 5m audio cable"
       }
     ],
-    "gallery": {
-      "first": {
+    "gallery": [
+      {
         "mobile": "../../assets/images/product-xx99-mark-one-headphones/mobile/image-gallery-1.jpg",
         "tablet": "../../assets/images/product-xx99-mark-one-headphones/tablet/image-gallery-1.jpg",
         "desktop": "../../assets/images/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg"
       },
-      "second": {
+      {
         "mobile": "../../assets/images/product-xx99-mark-one-headphones/mobile/image-gallery-2.jpg",
         "tablet": "../../assets/images/product-xx99-mark-one-headphones/tablet/image-gallery-2.jpg",
         "desktop": "../../assets/images/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg"
       },
-      "third": {
+      {
         "mobile": "../../assets/images/product-xx99-mark-one-headphones/mobile/image-gallery-3.jpg",
         "tablet": "../../assets/images/product-xx99-mark-one-headphones/tablet/image-gallery-3.jpg",
         "desktop": "../../assets/images/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg"
       }
-    },
+    ],
     "others": [
       {
         "slug": "xx99-mark-two-headphones",
@@ -296,23 +296,23 @@
         "item": "Travel bag"
       }
     ],
-    "gallery": {
-      "first": {
+    "gallery": [
+      {
         "mobile": "../../assets/images/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg",
         "tablet": "../../assets/images/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg",
         "desktop": "../../assets/images/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg"
       },
-      "second": {
+      {
         "mobile": "../../assets/images/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg",
         "tablet": "../../assets/images/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg",
         "desktop": "../../assets/images/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg"
       },
-      "third": {
+      {
         "mobile": "../../assets/images/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg",
         "tablet": "../../assets/images/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg",
         "desktop": "../../assets/images/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg"
       }
-    },
+    ],
     "others": [
       {
         "slug": "xx99-mark-one-headphones",
@@ -384,23 +384,23 @@
         "item": "7.5m optical cable"
       }
     ],
-    "gallery": {
-      "first": {
+    "gallery": [
+      {
         "mobile": "../../assets/images/product-zx7-speaker/mobile/image-gallery-1.jpg",
         "tablet": "../../assets/images/product-zx7-speaker/tablet/image-gallery-1.jpg",
         "desktop": "../../assets/images/product-zx7-speaker/desktop/image-gallery-1.jpg"
       },
-      "second": {
+      {
         "mobile": "../../assets/images/product-zx7-speaker/mobile/image-gallery-2.jpg",
         "tablet": "../../assets/images/product-zx7-speaker/tablet/image-gallery-2.jpg",
         "desktop": "../../assets/images/product-zx7-speaker/desktop/image-gallery-2.jpg"
       },
-      "third": {
+      {
         "mobile": "../../assets/images/product-zx7-speaker/mobile/image-gallery-3.jpg",
         "tablet": "../../assets/images/product-zx7-speaker/tablet/image-gallery-3.jpg",
         "desktop": "../../assets/images/product-zx7-speaker/desktop/image-gallery-3.jpg"
       }
-    },
+    ],
     "others": [
       {
         "slug": "zx9-speaker",
@@ -472,23 +472,23 @@
         "item": "10m optical cable"
       }
     ],
-    "gallery": {
-      "first": {
+    "gallery": [
+      {
         "mobile": "../../assets/images/product-zx9-speaker/mobile/image-gallery-1.jpg",
         "tablet": "../../assets/images/product-zx9-speaker/tablet/image-gallery-1.jpg",
         "desktop": "../../assets/images/product-zx9-speaker/desktop/image-gallery-1.jpg"
       },
-      "second": {
+      {
         "mobile": "../../assets/images/product-zx9-speaker/mobile/image-gallery-2.jpg",
         "tablet": "../../assets/images/product-zx9-speaker/tablet/image-gallery-2.jpg",
         "desktop": "../../assets/images/product-zx9-speaker/desktop/image-gallery-2.jpg"
       },
-      "third": {
+      {
         "mobile": "../../assets/images/product-zx9-speaker/mobile/image-gallery-3.jpg",
         "tablet": "../../assets/images/product-zx9-speaker/tablet/image-gallery-3.jpg",
         "desktop": "../../assets/images/product-zx9-speaker/desktop/image-gallery-3.jpg"
       }
-    },
+    ],
     "others": [
       {
         "slug": "zx7-speaker",

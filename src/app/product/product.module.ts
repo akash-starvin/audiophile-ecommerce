@@ -9,6 +9,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CurrencyPipe } from './pipes/currency.pipe';
 import { FeaturesComponent } from './components/features/features.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FeaturesComponent } from './components/features/features.component';
     ProductCardComponent,
     ProductDetailComponent,
     CurrencyPipe,
-    FeaturesComponent
+    FeaturesComponent,
+    GalleryComponent
   ],
   imports: [
     CommonModule,

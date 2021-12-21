@@ -1,0 +1,11 @@
+<section>
+  <picture *ngFor="let item of images">
+    <source [srcset]="item.desktop" media="(min-width: 1200px)" />
+    <source [srcset]="item.tablet" media="(min-width: 768px)" />
+    <img
+      [src]="item.mobile"
+      alt="gallery-image"
+      class="gallery-image"
+    />
+  </picture>
+</section>
