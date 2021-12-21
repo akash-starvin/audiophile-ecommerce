@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="container__features">
+    <h1 class="title-text">Features</h1>
+    <p class="sub-text" [innerHtml]="features"></p>
+  </div>
+  <div class="container__included-items">
+    <h1 class="title-text">In the box</h1>
+    <div>
+      <div
+        *ngFor="let item of includedItems"
+        class="container__included-items__wrapper"
+      >
+        <span class="quantity">{{ item.quantity }}x</span>
+        <span class="sub-text">{{ item.item }}</span>
+      </div>
+    </div>
+  </div>
+</div>

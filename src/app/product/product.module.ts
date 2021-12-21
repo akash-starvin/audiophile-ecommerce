@@ -8,6 +8,7 @@ import { CoreModule } from '../core/core.module';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CurrencyPipe } from './pipes/currency.pipe';
+import { FeaturesComponent } from './components/features/features.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CurrencyPipe } from './pipes/currency.pipe';
     CategoryBannerComponent,
     ProductCardComponent,
     ProductDetailComponent,
-    CurrencyPipe
+    CurrencyPipe,
+    FeaturesComponent
   ],
   imports: [
     CommonModule,

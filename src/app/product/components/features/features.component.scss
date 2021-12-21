@@ -1,0 +1,81 @@
+@use "../../../../assets/sass/variables.scss";
+@use "../../../../assets/sass/mixins.scss";
+
+.container {
+  &__features {
+    margin-bottom: 88px;
+  }
+
+  &__included-items {
+    margin-bottom: 88px;
+  }
+
+  &__included-items__wrapper {
+    margin-bottom: 8px;
+  }
+
+  .title-text {
+    @include mixins.text(24px, 500, variables.$text-black);
+    letter-spacing: 0.86px;
+    line-height: 36px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .sub-text {
+    @include mixins.text(15px, 400, variables.$text-black);
+    opacity: 0.5;
+    line-height: 25px;
+  }
+
+  .quantity {
+    @include mixins.text(15px, 400, variables.$theme-orange);
+    line-height: 25px;
+    margin-right: 22px;
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .container {
+    &__features {
+      margin-bottom: 120px;
+    }
+
+    &__included-items {
+      display: flex;
+      margin-bottom: 120px;
+    }
+
+    &__included-items__wrapper {
+      margin-bottom: 8px;
+    }
+
+    .title-text {
+      @include mixins.text(32px, 500, variables.$text-black);
+      letter-spacing: 1.14px;
+      line-height: 36px;
+      margin-bottom: 32px;
+      width: 30vw;
+    }
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  .container {
+    display: flex;
+
+    &__features {
+      width: 60vw;
+      margin-right: 125px;
+    }
+
+    &__included-items {
+     flex-direction: column;
+      margin-bottom: 120px;
+    }
+
+    .title-text {
+      width: 17vw;
+    }
+  }
+}
