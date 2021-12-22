@@ -2,6 +2,7 @@
 
 .container {
   max-width: variables.$mobile-max-width;
+  margin: 0 20px;
 }
 
 @media screen and (min-width: variables.$tablet-screen-size) {
