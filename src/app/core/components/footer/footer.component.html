@@ -1,0 +1,29 @@
+<section>
+  <div class="container">
+    <div class="container__border"></div>
+    <div class="container__header">
+      <button class="remove-btn-class mb" routerLink="/">
+        <img src="../../../../assets/icons/logo.svg" alt="logo" height="25" />
+      </button>
+      <ul class="container__header__menu-wrapper mb">
+        <li *ngFor="let nav of navItems" class="menu-item remove-list-bullets">
+          <a [routerLink]="[nav.route]">{{ nav.name }}</a>
+        </li>
+      </ul>
+    </div>
+    <p class="container__sub-text mb">
+      Audiophile is an all in one stop to fulfill your audio needs. We're a
+      small team of music lovers and sound specialists who are devoted to
+      helping you get the most out of personal audio. Come and visit our demo
+      facility - we’re open 7 days a week.
+    </p>
+    <div class="container__footer">
+      <p class="container__sub-text mb">Copyright 2021. All Rights Reserved</p>
+      <div class="container__footer__social">
+        <a *ngFor="let item of socialMenu" [attr.href]="[item.route]">
+          <img [src]="item.image" alt="logo" height="25" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

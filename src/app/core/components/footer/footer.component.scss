@@ -1,0 +1,110 @@
+@use "../../../../assets/sass/common.scss";
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+
+section {
+  background-color: variables.$background-black;
+  margin-top: 60px;
+}
+
+.container {
+  padding: 52px 24px 38px;
+  text-align: center;
+
+  &__border {
+    height: 4px;
+    width: 101px;
+    background-color: #d87d4a;
+    position: relative;
+    top: -52px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  &__header__menu-wrapper .menu-item {
+    @include mixins.text(13px, 400, variables.$text-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 25px;
+    margin-bottom: 16px;
+  }
+
+  &__header__menu-wrapper .menu-item:hover {
+    @include mixins.transition();
+    color: variables.$theme-orange;
+  }
+
+  &__sub-text {
+    @include mixins.text(15px, 400, variables.$text-white);
+    opacity: 0.5;
+    line-height: 25px;
+  }
+
+  &__footer__social {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .mb {
+    margin-bottom: 48px;
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .container {
+    padding: 60px 40px 46px;
+    text-align: left;
+
+    &__border {
+      top: -60px;
+      left: 0;
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+
+    &__header__menu-wrapper {
+      display: flex;
+      gap: 30px;
+    }
+
+    &__sub-text.mb {
+      margin-bottom: 0;
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 80px;
+    }
+
+    .mb {
+      margin-bottom: 32px;
+    }
+  }
+}
+@media screen and (min-width: variables.$desktop-screen-size) {
+  section {
+    margin-top: 80px;
+  }
+
+  .container {
+    width: variables.$tablet-max-width;
+    margin: 0 auto;
+    padding: 75px 0 48px;
+
+    &__border {
+      top: -75px;
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__sub-text {
+      width: 40vw;
+    }
+  }
+}
