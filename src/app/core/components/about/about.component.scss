@@ -1,0 +1,78 @@
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+
+section {
+  text-align: center;
+  margin: 60px auto;
+}
+
+.section__image {
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.container {
+  &__title {
+    @include mixins.text(28px, 500, variables.$text-black);
+    letter-spacing: 1px;
+    line-height: 34px;
+    text-transform: uppercase;
+    margin: 40px auto 32px;
+
+    &__highlight {
+      color: variables.$theme-orange;
+    }
+  }
+
+  &__description {
+    @include mixins.text(15px, 500, variables.$text-black);
+    opacity: 0.5;
+    line-height: 25px;
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .container {
+    &__title {
+      @include mixins.text(40px, 500, variables.$text-black);
+      letter-spacing: 1.43px;
+      line-height: 44px;
+      margin: 63px auto 32px;
+      width: 60vw;
+    }
+
+    &__description {
+      @include mixins.text(15px, 500, variables.$text-black);
+      opacity: 0.5;
+      line-height: 25px;
+      margin: auto;
+      width: 80vw;
+    }
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  section {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    text-align: left;
+    margin: 60px auto;
+    gap: 30px;
+  }
+
+  .container {
+    margin: auto 0;
+    width: 40%;
+    &__title {
+      margin: 0 0 32px;
+      width: 100%;
+    }
+
+    &__description {
+      margin: auto;
+      width: 100%;
+    }
+  }
+}

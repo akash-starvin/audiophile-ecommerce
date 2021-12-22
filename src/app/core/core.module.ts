@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { CoreRoutingModule } from './core-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { CategoryContainerComponent } from './components/category-container/category-container.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    CategoryContainerComponent
+    CategoryContainerComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { CategoryContainerComponent } from './components/category-container/cate
   ],
   exports:[
     HeaderComponent,
-    CategoryContainerComponent
+    CategoryContainerComponent,
+    AboutComponent
   ]
 })
 export class CoreModule { }

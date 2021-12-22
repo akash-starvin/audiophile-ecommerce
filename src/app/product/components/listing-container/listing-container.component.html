@@ -1,6 +1,4 @@
-<category-banner
-  *ngIf="productCategory"
-  [path]="productCategory">
+<category-banner *ngIf="productCategory" [path]="productCategory">
 </category-banner>
 <div class="container">
   <div *ngIf="showProducts" class="container__product-card-wrapper">
@@ -12,4 +10,5 @@
     ></product-card>
   </div>
   <category-container></category-container>
+  <home-about></home-about>
 </div>
