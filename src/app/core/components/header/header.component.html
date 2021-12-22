@@ -8,7 +8,9 @@
         width="16"
       />
     </button>
-    <img src="../../../../assets/icons/logo.svg" alt="logo" height="25" />
+    <button class="remove-btn-class" routerLink="/">
+      <img src="../../../../assets/icons/logo.svg" alt="logo" height="25" />
+    </button>
     <ul class="container__nav-wrapper">
       <li
         *ngFor="let nav of navItems"
@@ -19,7 +21,7 @@
         <a [routerLink]="[nav.route]">{{ nav.name }}</a>
       </li>
     </ul>
-    <button class="container__cart remove-btn-class">
+    <button class="container__cart remove-btn-class" (click)="openCart()">
       <img
         src="../../../../assets/icons/icon-cart.svg"
         alt="cart"
