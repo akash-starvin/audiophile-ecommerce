@@ -28,7 +28,9 @@
           <span class="count-text">{{ productCount }}</span>
           <button class="btn" (click)="updateCount(1)">+</button>
         </div>
-        <button class="add-to-cart-btn"  (click)="updateCount(0)">Add to cart</button>
+        <button class="add-to-cart-btn" (click)="getLocalCartItems()">
+          Add to cart
+        </button>
       </div>
     </div>
   </div>
