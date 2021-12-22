@@ -34,6 +34,7 @@ section {
     border: none;
     outline: none;
     background-color: transparent;
+    cursor: pointer;
 
     span {
       @include mixins.text(13px, 400, variables.$text-black);

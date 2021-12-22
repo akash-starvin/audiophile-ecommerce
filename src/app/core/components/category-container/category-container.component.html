@@ -2,7 +2,11 @@
   <div *ngFor="let item of categoryList" class="container">
     <img [src]="item.image" alt="category" class="container__image" />
     <h5 class="container__title">{{ item.name }}</h5>
-    <button class="container__btn-shop" [routerLink]="[item.route]">
+    <button
+      class="container__btn-shop"
+      [routerLink]="[item.route]"
+      (click)="scrollToTop()"
+    >
       <span>SHOP</span
       ><img
         src="../../../../assets/icons/icon-arrow-right.svg"

@@ -8,10 +8,13 @@ import { Menu } from '../../interface/menu';
   styleUrls: ['./category-container.component.scss'],
 })
 export class CategoryContainerComponent implements OnInit {
-
   categoryList: Menu[] = Constants.NavigationMenu.slice(1);
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  scrollToTop() {
+    window.scroll(0, 0);
+  }
 }
