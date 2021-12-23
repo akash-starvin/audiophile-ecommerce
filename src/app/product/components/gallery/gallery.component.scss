@@ -2,7 +2,7 @@
 
 .gallery-image {
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: variables.$border-radius;
   height: 100%;
   max-width: 100%;
   margin-bottom: 20px;

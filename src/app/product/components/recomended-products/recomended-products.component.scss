@@ -23,7 +23,7 @@ section {
   &__product-image {
     object-fit: cover;
     max-width: 100%;
-    border-radius: 8px;
+    border-radius: variables.$border-radius;
   }
 
   &__title {

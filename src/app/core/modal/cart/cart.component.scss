@@ -39,7 +39,7 @@
   &__img {
     height: 64px;
     width: 64px;
-    border-radius: 8px;
+    border-radius: variables.$border-radius;
     margin-right: 16px;
   }
 

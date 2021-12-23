@@ -9,7 +9,7 @@ section {
 .section__image {
   max-width: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: variables.$border-radius;
 }
 
 .container {
