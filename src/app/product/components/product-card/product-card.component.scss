@@ -94,7 +94,7 @@
 
 @media screen and (min-width: variables.$tablet-screen-size) {
   .container {
-    margin-bottom: 120px;
+    margin-bottom: 60px;
 
     &__detail {
       margin: 52px 60px 0;
@@ -115,6 +115,7 @@
     display: flex;
     justify-content: space-between;
     gap: 50px;
+    margin: 80px 0;
 
     &__product-image {
       height: 560px;
