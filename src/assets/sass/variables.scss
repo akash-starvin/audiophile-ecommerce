@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
 $font-family: "Manrope", sans-serif;
+$border-radius: 8px;
 
 $tablet-screen-size: 768px;
 $desktop-screen-size: 1024px;
@@ -12,16 +13,13 @@ $tablet-max-width: 90vw;
 $large-screen-max-width: 80vw;
 $extra-large-screen-max-width: 70vw;
 
-$theme-orange: #d87d4a;
-$theme-orange-dim: #fbaf85;
-$background-black: #191919;
-$background-grey: #f1f1f1;
-$black: #000000;
-$black-hover: #4c4c4c;
-$white: #ffffff;
-
-$text-white: #ffffff;
-$text-black: #000000;
-
-$border: rgba(255, 255, 255, 0.2);
-$border-radius: 8px;
+$theme-orange: hsl(22, 65%, 57%);
+$theme-orange-dim: hsl(21, 94%, 75%);
+$background-black: hsl(0, 0%, 10%);
+$background-grey: hsl(0, 0%, 95%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$black-hover: hsl(0, 0%, 30%);
+$text-white: hsl(0, 0%, 100%);
+$text-black: hsl(0, 0%, 0%);
+$border: hsla(0, 0%, 100%, 0.2);
