@@ -11,9 +11,9 @@
   color: $color;
 }
 
-@mixin button($type, $color) {
+@mixin button($type, $color, $width: 160px) {
   height: 48px;
-  width: 160px;
+  width: $width;
   border: 1px solid;
   border: none;
   outline: none;
