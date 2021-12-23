@@ -8,6 +8,8 @@ import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './modal/cart/cart.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TrimPipe } from './pipes/trim.pipe';
+import { CurrencyPipe } from './pipes/currency.pipe';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     AboutComponent,
     FooterComponent,
     CartComponent,
+    TrimPipe,
+    CurrencyPipe,
   ],
   imports: [CommonModule, CoreRoutingModule, MatDialogModule],
   exports: [
@@ -24,6 +28,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     AboutComponent,
     FooterComponent,
     CartComponent,
+    CurrencyPipe,
   ],
 })
 export class CoreModule {}

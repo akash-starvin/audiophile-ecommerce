@@ -1,0 +1,101 @@
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+@use "../../../../assets/sass/common.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  &__items-count {
+    @include mixins.text(18px, 500, variables.$text-black);
+    letter-spacing: 1.29px;
+    line-height: 22px;
+    text-transform: uppercase;
+  }
+
+  &__remove-all-btn {
+    @include mixins.text(15px, 400, variables.$text-black);
+    opacity: 0.5;
+    line-height: 25px;
+    text-decoration: underline;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+
+  &__img {
+    height: 64px;
+    width: 64px;
+    border-radius: 8px;
+    margin-right: 16px;
+  }
+
+  &__name {
+    @include mixins.text(15px, 400, variables.$text-black);
+    line-height: 25px;
+  }
+
+  &__pirce {
+    @include mixins.text(14px, 400, variables.$text-black);
+    opacity: 0.5;
+    line-height: 25px;
+  }
+
+  .update-count-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    width: 85px;
+    background-color: variables.$background-grey;
+  }
+
+  .update-count-wrapper .count-text {
+    @include mixins.text(13px, 500, variables.$text-black);
+    opacity: 1;
+    letter-spacing: 1px;
+    line-height: 16px;
+    text-align: center;
+  }
+
+  .update-count-wrapper .btn {
+    @include mixins.text(13px, 400, variables.$text-black);
+    line-height: 16px;
+    padding: 7px 12px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    &:hover {
+      color: variables.$theme-orange;
+      background-color: darken(variables.$background-grey, 10%);
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 32px 0 24px;
+
+  &__total-text {
+    @include mixins.text(15px, 400, variables.$text-black);
+    opacity: 0.5;
+    line-height: 25px;
+    text-transform: uppercase;
+  }
+
+  &__total-amount {
+    @include mixins.text(18px, 500, variables.$text-black);
+    line-height: 22px;
+  }
+}
+
+.checkout-btn {
+  @include mixins.button(fill, variables.$theme_orange, 100%);
+}

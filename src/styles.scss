@@ -3,3 +3,13 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.mat-dialog-container {
+  width: 327px !important;
+}
+
+@media screen and (min-width: 768px) {
+  .mat-dialog-container {
+    width: 377px !important;
+  }
+}
