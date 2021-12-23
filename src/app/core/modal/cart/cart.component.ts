@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from 'src/app/product/interface/cart';
+import { Product } from 'src/app/product/interface/product';
 import { Constants } from '../../constants/Constants';
 
 @Component({
@@ -9,21 +10,34 @@ import { Constants } from '../../constants/Constants';
 })
 export class CartComponent implements OnInit {
   cartItems: Cart[] = [];
-
+  totalCost: number = 0;
+  cartItemsCount: number = 0;
   constructor() {}
 
   ngOnInit(): void {
     this.getLocalCartItems();
-    console.log(this.cartItems);
+    this.calculateTotalCostAndCartItems();
   }
 
-  updateCount(val: number) {
+  updateCount(val: number, id: number) {
+    let objIndex = this.cartItems.findIndex((obj) => obj.id == id);
     switch (val) {
       case -1:
-        // if (this.productCount > 1) this.productCount--;
+        if (this.cartItems[objIndex].quantity === 1) {
+          this.removeCartItem(objIndex);
+          this.saveToLocal(this.cartItems);
+        } else {
+          this.cartItems[objIndex].quantity--;
+          this.saveToLocal(this.cartItems);
+        }
+        this.calculateTotalCostAndCartItems();
         break;
       case 1:
-        // if (this.productCount < this.MAX_COUNT) this.productCount++;
+        if (this.cartItems[objIndex].quantity < 10) {
+          this.cartItems[objIndex].quantity++;
+          this.saveToLocal(this.cartItems);
+          this.calculateTotalCostAndCartItems();
+        }
         break;
     }
   }
@@ -40,4 +54,29 @@ export class CartComponent implements OnInit {
       );
     }
   }
+
+  removeCartItem(index: number) {
+    this.cartItems.splice(index, 1);
+  }
+
+  removeAllCartItems() {
+    this.cartItems = [];
+    this.calculateTotalCostAndCartItems();
+    this.saveToLocal(this.cartItems);
+  }
+
+  saveToLocal(object: any) {
+    localStorage.setItem(Constants.LOCAL_STORAGE_KEY, JSON.stringify(object));
+  }
+
+  calculateTotalCostAndCartItems() {
+    this.cartItemsCount = 0;
+    this.totalCost = 0;
+    this.cartItems.forEach((element) => {
+      this.totalCost = element.price * element.quantity;
+      this.cartItemsCount += element.quantity;
+    });
+  }
+
+  openCheckoutPage() {}
 }

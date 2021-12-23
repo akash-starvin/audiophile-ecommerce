@@ -19,6 +19,15 @@
     opacity: 0.5;
     line-height: 25px;
     text-decoration: underline;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &__disable {
+      opacity: 0.4;
+      cursor: auto;
+    }
   }
 }
 
@@ -39,7 +48,7 @@
     line-height: 25px;
   }
 
-  &__pirce {
+  &__price {
     @include mixins.text(14px, 400, variables.$text-black);
     opacity: 0.5;
     line-height: 25px;
@@ -98,4 +107,9 @@
 
 .checkout-btn {
   @include mixins.button(fill, variables.$theme_orange, 100%);
+
+  &__disable {
+    background-color: variables.$theme_orange-dim;
+    cursor: auto;
+  }
 }

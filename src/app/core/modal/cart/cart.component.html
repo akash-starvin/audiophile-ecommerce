@@ -1,7 +1,13 @@
 <div mat-dialog-content>
   <div class="header">
-    <h1 class="header__items-count">Cart({{ cartItems.length }})</h1>
-    <button class="header__remove-all-btn remove-btn-class">Remove All</button>
+    <h1 class="header__items-count">Cart({{ cartItemsCount }})</h1>
+    <button
+      class="header__remove-all-btn remove-btn-class"
+      (click)="removeAllCartItems()"
+      [ngClass]="{ 'header__remove-all-btn__disable': cartItemsCount === 0 }"
+    >
+      Remove All
+    </button>
   </div>
   <div *ngFor="let item of cartItems" class="item">
     <img class="item__img" [src]="item.image" alt="cart-image" />
@@ -11,15 +17,21 @@
         <span class="item__price">{{ item.price | currency }}</span>
       </div>
       <div class="update-count-wrapper">
-        <button class="btn" (click)="updateCount(-1)">-</button>
+        <button class="btn" (click)="updateCount(-1, item.id)">-</button>
         <span class="count-text">{{ item.quantity }}</span>
-        <button class="btn" (click)="updateCount(1)">+</button>
+        <button class="btn" (click)="updateCount(1, item.id)">+</button>
       </div>
     </div>
   </div>
   <div class="footer">
     <span class="footer__total-text">Total</span>
-    <h2 class="footer__total-amount">$1234</h2>
+    <h2 class="footer__total-amount">{{ totalCost | currency }}</h2>
   </div>
-  <button class="checkout-btn">Checkout</button>
+  <button
+    class="checkout-btn"
+    [ngClass]="{ 'checkout-btn__disable': cartItemsCount === 0 }"
+    (click)="openCheckoutPage()"
+  >
+    Checkout
+  </button>
 </div>
