@@ -10,9 +10,10 @@ import { ProductDataService } from '../../service/product-data.service';
   styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent implements OnInit {
-  @Input() data: any;
-  @Input() rowReverse: any;
-  @Input() isDetailView: any;
+  @Input()
+  data!: Product;
+  @Input() rowReverse: boolean | undefined;
+  @Input() isDetailView: boolean | undefined;
 
   MAX_COUNT: number = 10;
   productCount: number = 1;

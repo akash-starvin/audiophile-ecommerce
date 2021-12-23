@@ -65,7 +65,7 @@ export class CartComponent implements OnInit {
     this.saveToLocal(this.cartItems);
   }
 
-  saveToLocal(object: any) {
+  saveToLocal(object: Cart[]) {
     localStorage.setItem(Constants.LOCAL_STORAGE_KEY, JSON.stringify(object));
   }
 

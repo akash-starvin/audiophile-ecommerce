@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./category-banner.component.scss'],
 })
 export class CategoryBannerComponent implements OnInit {
-  @Input() path: any;
+  @Input() path!: string;
 
   constructor() {}
 
