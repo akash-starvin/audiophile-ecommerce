@@ -13,7 +13,7 @@ section {
   position: relative;
 
   &__background {
-    width: 100vw;
+    width: variables.$mobile-max-width;
   }
 
   &__detail {
@@ -54,7 +54,7 @@ section {
 @media screen and (min-width: variables.$tablet-screen-size) {
   .container {
     &__background {
-      max-width: 70vw;
+      max-width: variables.$tablet-max-width;
     }
 
     &__detail {
@@ -78,26 +78,34 @@ section {
 }
 
 @media screen and (min-width: variables.$desktop-screen-size) {
-  .container {
-    &__background {
-      max-width: variables.$tablet-max-width;
+  .container__detail {
+    left: 0;
+    top: 15%;
+    transform: none;
+    text-align: left;
+
+    &__product-name {
+      @include mixins.text(56px, 500, variables.$text-white);
+      margin: 26px auto 24px;
+      max-width: 392px;
     }
 
-    &__detail {
-      left: 0;
-      top: 15%;
-      transform: none;
-      text-align: left;
-
-      &__product-name {
-        @include mixins.text(56px, 500, variables.$text-white);
-        margin: 26px auto 24px;
-        max-width: 392px;
-      }
-
-      &__description {
-        max-width: 392px;
-      }
+    &__description {
+      max-width: 392px;
     }
+  }
+}
+
+@media screen and (min-width: variables.$large-screen-size) {
+  .container,
+  .container__background {
+    width: variables.$large-screen-max-width;
+  }
+}
+
+@media screen and (min-width: variables.$extra-large-screen-size) {
+  .container,
+  .container__background {
+    width: variables.$extra-large-screen-max-width;
   }
 }

@@ -108,3 +108,15 @@ section {
     }
   }
 }
+
+@media screen and (min-width: variables.$large-screen-size) {
+  .container {
+    width: variables.$large-screen-max-width;
+  }
+}
+
+@media screen and (min-width: variables.$extra-large-screen-size) {
+  .container {
+    width: variables.$extra-large-screen-max-width;
+  }
+}

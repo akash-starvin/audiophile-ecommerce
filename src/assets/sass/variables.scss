@@ -3,13 +3,17 @@
 $font-family: "Manrope", sans-serif;
 
 $tablet-screen-size: 768px;
-$desktop-screen-size: 1200px;
+$desktop-screen-size: 1024px;
+$large-screen-size: 1400px;
+$extra-large-screen-size: 1600px;
 
 $mobile-max-width: 100vw;
-$tablet-max-width: 70vw;
+$tablet-max-width: 90vw;
+$large-screen-max-width: 80vw;
+$extra-large-screen-max-width: 70vw;
 
 $theme-orange: #d87d4a;
-$theme-orange-dim:  #FBAF85;
+$theme-orange-dim: #fbaf85;
 $background-black: #191919;
 $background-grey: #f1f1f1;
 $black: #000000;

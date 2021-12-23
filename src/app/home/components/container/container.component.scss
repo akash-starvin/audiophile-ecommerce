@@ -7,7 +7,7 @@
 
 @media screen and (min-width: variables.$tablet-screen-size) {
   .container {
-    margin: 0 auto;
+    margin: 0 40px;
   }
 }
 
@@ -15,5 +15,17 @@
   .container {
     width: variables.$tablet-max-width;
     margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: variables.$large-screen-size) {
+  .container {
+    width: variables.$large-screen-max-width;
+  }
+}
+
+@media screen and (min-width: variables.$extra-large-screen-size) {
+  .container {
+    width: variables.$extra-large-screen-max-width;
   }
 }

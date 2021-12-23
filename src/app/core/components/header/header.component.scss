@@ -16,6 +16,12 @@ section {
   }
 }
 
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .container {
+    padding: 32px 40px 36px;
+  }
+}
+
 @media screen and (min-width: variables.$desktop-screen-size) {
   .container {
     width: variables.$tablet-max-width;
@@ -46,5 +52,17 @@ section {
     .nav-item--active {
       color: variables.$theme-orange;
     }
+  }
+}
+
+@media screen and (min-width: variables.$large-screen-size) {
+  .container {
+    width: variables.$large-screen-max-width;
+  }
+}
+
+@media screen and (min-width: variables.$extra-large-screen-size) {
+  .container {
+    width: variables.$extra-large-screen-max-width;
   }
 }
