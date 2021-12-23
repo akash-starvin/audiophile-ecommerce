@@ -1,6 +1,6 @@
 <div class="container" [ngClass]="{ 'row-reverse': rowReverse }">
   <picture>
-    <source [srcset]="data.categoryImage.desktop" media="(min-width: 1200px)" />
+    <source [srcset]="data.categoryImage.desktop" media="(min-width: 1024px)" />
     <source [srcset]="data.categoryImage.tablet" media="(min-width: 768px)" />
     <img
       [src]="data.categoryImage.mobile"

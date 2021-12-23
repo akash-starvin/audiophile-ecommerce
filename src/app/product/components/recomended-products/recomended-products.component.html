@@ -3,7 +3,7 @@
   <div class="d-flex">
     <div *ngFor="let item of products" class="container">
       <picture>
-        <source [srcset]="item.image.desktop" media="(min-width: 1200px)" />
+        <source [srcset]="item.image.desktop" media="(min-width: 1024px)" />
         <source [srcset]="item.image.tablet" media="(min-width: 768px)" />
         <img
           [src]="item.image.mobile"
