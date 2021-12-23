@@ -12,7 +12,13 @@
         />
       </picture>
       <h1 class="container__title">{{ item.name }}</h1>
-      <button class="container__btn">See Product</button>
+      <button
+        class="container__btn"
+        [routerLink]="['/', item.category, item.slug]"
+        (click)="openProduct(item.slug)"
+      >
+        See Product
+      </button>
     </div>
   </div>
 </section>
