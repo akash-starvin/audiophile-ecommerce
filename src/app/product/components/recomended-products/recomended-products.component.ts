@@ -27,6 +27,7 @@ export class RecomendedProductsComponent implements OnInit {
     let objIndex = this.jsonResponse.findIndex(
       (obj: { slug: string }) => obj.slug == this.searchProductId
     );
+    window.scroll({ top: 0, behavior: 'smooth' });
     this.productDataService.selectedProduct.next(this.jsonResponse[objIndex]);
   }
 
