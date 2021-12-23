@@ -3,7 +3,7 @@ import { Constants } from '../../constants/Constants';
 import { Menu } from '../../interface/menu';
 
 @Component({
-  selector: 'category-container',
+  selector: 'core-category-container',
   templateUrl: './category-container.component.html',
   styleUrls: ['./category-container.component.scss'],
 })

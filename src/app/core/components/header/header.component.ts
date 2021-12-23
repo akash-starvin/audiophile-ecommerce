@@ -5,7 +5,7 @@ import { Menu } from '../../interface/menu';
 import { CartComponent } from '../../modal/cart/cart.component';
 
 @Component({
-  selector: 'header',
+  selector: 'core-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })

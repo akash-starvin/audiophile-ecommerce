@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductDataService } from '../../service/product-data.service';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-product-detail',
+  selector: 'product-detail',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss'],
 })

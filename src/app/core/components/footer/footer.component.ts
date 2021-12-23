@@ -3,7 +3,7 @@ import { Constants } from '../../constants/Constants';
 import { Menu } from '../../interface/menu';
 
 @Component({
-  selector: 'home-footer',
+  selector: 'core-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })

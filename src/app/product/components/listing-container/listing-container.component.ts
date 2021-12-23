@@ -4,7 +4,7 @@ import { Product } from '../../interface/product';
 import { ProductDataService } from '../../service/product-data.service';
 
 @Component({
-  selector: 'app-listing-container',
+  selector: 'product-listing-container',
   templateUrl: './listing-container.component.html',
   styleUrls: ['./listing-container.component.scss'],
 })
