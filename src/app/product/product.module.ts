@@ -7,7 +7,6 @@ import { CategoryBannerComponent } from './components/category-banner/category-b
 import { CoreModule } from '../core/core.module';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { CurrencyPipe } from './pipes/currency.pipe';
 import { FeaturesComponent } from './components/features/features.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { RecomendedProductsComponent } from './components/recomended-products/recomended-products.component';
@@ -18,15 +17,10 @@ import { RecomendedProductsComponent } from './components/recomended-products/re
     CategoryBannerComponent,
     ProductCardComponent,
     ProductDetailComponent,
-    CurrencyPipe,
     FeaturesComponent,
     GalleryComponent,
-    RecomendedProductsComponent
+    RecomendedProductsComponent,
   ],
-  imports: [
-    CommonModule,
-    ProductRoutingModule,
-    CoreModule
-  ]
+  imports: [CommonModule, ProductRoutingModule, CoreModule],
 })
-export class ProductModule { }
+export class ProductModule {}
