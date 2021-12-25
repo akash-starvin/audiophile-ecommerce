@@ -38,8 +38,8 @@
     }
   } @else {
     color: $color;
-    border-color: $color;
-    background-color: variables.$white;
+    border: 1px solid $color;
+    background-color: transparent;
     &:hover {
       color: variables.$text-white;
       background-color: $color;

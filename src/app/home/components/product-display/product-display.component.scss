@@ -1,0 +1,44 @@
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+
+.container {
+  border-radius: 8px;
+  position: relative;
+  margin: 24px 0;
+  overflow: hidden;
+
+  &__background {
+    width: 100%;
+  }
+
+  &__body {
+    top: 33%;
+    left: 24px;
+    position: absolute;
+    margin: auto 0;
+
+    &__title {
+      @include mixins.text(28px, 500, variables.$text-black);
+      letter-spacing: 2px;
+      line-height: 34px;
+      margin-bottom: 36px;
+      text-transform: uppercase;
+    }
+
+    &__see-product-btn {
+      @include mixins.button(nofill, variables.$black);
+    }
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .container__body {
+    left: 62px;
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  .container__body {
+    left: 95px;
+  }
+}

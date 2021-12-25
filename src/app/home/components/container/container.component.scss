@@ -8,6 +8,11 @@
 @media screen and (min-width: variables.$tablet-screen-size) {
   .container {
     margin: 0 40px;
+
+    &__product-display {
+      height: 100%;
+      display: flex;
+    }
   }
 }
 
