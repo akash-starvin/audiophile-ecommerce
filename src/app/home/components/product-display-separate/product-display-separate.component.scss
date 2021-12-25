@@ -1,0 +1,57 @@
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+
+.product-image {
+  width: 100%;
+  border-radius: variables.$border-radius;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: variables.$background-grey;
+  border-radius: variables.$border-radius;
+  min-height: 200px;
+  padding: 0 24px;
+
+  &__title {
+    @include mixins.text(28px, 500, variables.$text-black);
+    letter-spacing: 2px;
+    line-height: 34px;
+    margin-bottom: 36px;
+    text-transform: uppercase;
+  }
+
+  &__see-product-btn {
+    @include mixins.button(nofill, variables.$black);
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  section {
+    display: flex;
+    justify-content: space-between;
+    gap: 11px;
+  }
+
+  .product-image {
+    margin-bottom: 0;
+  }
+
+  .container {
+    padding: 0 41px;
+  }
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  section {
+    gap: 30px;
+  }
+
+  .container {
+    padding: 0 201px 0 95px;
+  }
+}
