@@ -1,13 +1,11 @@
 <div class="container">
-  <picture *ngIf="data.image">
+  <picture>
     <source [srcset]="data.image.desktop" media="(min-width: 1024px)" />
     <source [srcset]="data.image.tablet" media="(min-width: 768px)" />
     <img [src]="data.image.mobile" alt="banner" class="container__background" />
   </picture>
   <div class="container__body">
-    <h1 *ngIf="data.name" class="container__body__title">{{ data.name }}</h1>
-    <button *ngIf="data.slug" class="container__body__see-product-btn">
-      See product
-    </button>
+    <h1 class="container__body__title">{{ data.name }}</h1>
+    <button class="container__body__see-product-btn">See product</button>
   </div>
 </div>

@@ -32,13 +32,21 @@
 }
 
 @media screen and (min-width: variables.$tablet-screen-size) {
-  .container__body {
-    left: 62px;
+  .container {
+    margin: 32px 0;
+
+    &__body {
+      left: 62px;
+    }
   }
 }
 
 @media screen and (min-width: variables.$desktop-screen-size) {
-  .container__body {
-    left: 95px;
+  .container {
+    margin: 48px 0;
+
+    &__body {
+      left: 95px;
+    }
   }
 }
