@@ -38,7 +38,6 @@ section {
 
   &__input {
     height: 56px;
-    max-width: 309px;
     border-radius: variables.$border-radius;
     border: 1px solid variables.$input-border;
     padding: 0 24px;
@@ -78,6 +77,7 @@ section {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    column-gap: 16px;
   }
 
   .mb {
@@ -85,12 +85,25 @@ section {
   }
 
   .container__field__input {
-    max-width: 350px;
-    width: 100vw;
+    width: 39vw;
+  }
+
+  .full-width,
+  .full-width input {
+    width: -webkit-fill-available;
   }
 }
 
 @media screen and (min-width: variables.$desktop-screen-size) {
+  .container__field__input {
+    width: 21vw;
+  }
+
+  .full-width,
+  .full-width input {
+    width: -webkit-fill-available;
+  }
+
   .mb {
     margin-bottom: 30px;
   }

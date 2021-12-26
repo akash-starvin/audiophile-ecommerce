@@ -3,7 +3,11 @@
   <div *ngFor="let section of data" class="container">
     <h3 class="container__title">{{ section.sectionName }}</h3>
     <div class="d-flex">
-      <div *ngFor="let field of section.fields" class="container__field">
+      <div
+        *ngFor="let field of section.fields"
+        class="container__field"
+        [ngClass]="{ 'full-width': field.fullWidth }"
+      >
         <h5 class="container__field__text">{{ field.name }}</h5>
         <input
           *ngIf="field.fieldType === 'TextField'"
