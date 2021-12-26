@@ -1,0 +1,42 @@
+[
+  {
+    "sectionName": "Billing Details",
+    "type": "section",
+    "disabled": false,
+    "fields": [
+      {
+        "name": "Name",
+        "key": "name",
+        "type": "text",
+        "fieldType": "TextField",
+        "placeholder": "Alexei Ward",
+        "errorMessage": "Please enter a name",
+        "fullWidth": false,
+        "mandatory": true,
+        "readOnly": false
+      },
+      {
+        "name": "Email Address",
+        "key": "email-address",
+        "type": "email",
+        "fieldType": "TextField",
+        "placeholder": "alexei@mail.com",
+        "errorMessage": "Please enter a email address",
+        "fullWidth": false,
+        "mandatory": true,
+        "readOnly": false
+      },
+      {
+        "name": "Phone Number",
+        "key": "phone-number",
+        "type": "number",
+        "fieldType": "TextField",
+        "placeholder": "+1 202-555-0136",
+        "errorMessage": "Please enter a phone number",
+        "fullWidth": false,
+        "mandatory": true,
+        "readOnly": false
+      }
+    ]
+  }
+]
