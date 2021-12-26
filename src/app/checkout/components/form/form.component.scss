@@ -1,0 +1,97 @@
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+@use "../../../../assets/sass/common.scss";
+
+section {
+  padding: 24px;
+  background-color: variables.$white;
+  border-radius: variables.$border-radius;
+}
+
+.page-title {
+  @include mixins.text(28px, 500, variables.$text-black);
+  font-size: 28px;
+  letter-spacing: 1px;
+  line-height: 34px;
+  padding-bottom: 36px;
+  text-transform: uppercase;
+}
+
+.container__title {
+  @include mixins.text(13px, 400, variables.$theme-orange);
+  letter-spacing: 0.93px;
+  line-height: 25px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.container__field {
+  display: flex;
+  flex-direction: column;
+
+  &__text {
+    @include mixins.text(12px, 400, variables.$text-black);
+    letter-spacing: -0.21px;
+    line-height: 14px;
+    margin-bottom: 11px;
+  }
+
+  &__input {
+    height: 56px;
+    max-width: 309px;
+    border-radius: variables.$border-radius;
+    border: 1px solid variables.$input-border;
+    padding: 0 24px;
+    margin-bottom: 24px;
+    cursor: pointer;
+    @include mixins.text(14px, 400, variables.$text-black);
+    letter-spacing: -0.25px;
+    line-height: 17px;
+
+    &:hover,
+    &:focus {
+      border-color: variables.$theme-orange;
+      outline: variables.$theme-orange;
+
+      opacity: 1;
+    }
+
+    &::placeholder {
+      @include mixins.text(14px, 400, variables.$text-black);
+      opacity: 0.4;
+      letter-spacing: -0.25px;
+      line-height: 17px;
+    }
+  }
+
+  .mb {
+    margin-bottom: 8px;
+  }
+}
+
+.d-flex {
+  display: block;
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .d-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .mb {
+    margin-bottom: 22px;
+  }
+
+  .container__field__input {
+    max-width: 350px;
+    width: 100vw;
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  .mb {
+    margin-bottom: 30px;
+  }
+}

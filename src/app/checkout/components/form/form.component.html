@@ -1,0 +1,17 @@
+<section>
+  <h1 class="page-title">Checkout</h1>
+  <div *ngFor="let section of data" class="container">
+    <h3 class="container__title">{{ section.sectionName }}</h3>
+    <div class="d-flex">
+      <div *ngFor="let field of section.fields" class="container__field">
+        <h5 class="container__field__text">{{ field.name }}</h5>
+        <input
+          *ngIf="field.fieldType === 'TextField'"
+          [type]="field.type"
+          class="container__field__input"
+          [placeholder]="field.placeholder"
+        />
+      </div>
+    </div>
+  </div>
+</section>

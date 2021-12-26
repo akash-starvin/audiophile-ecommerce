@@ -1,6 +1,7 @@
 @use "../../../../assets/sass/variables.scss";
 
 section {
+  padding: 24px;
   background-color: variables.$background-grey;
 }
 
@@ -9,15 +10,20 @@ section {
 }
 
 @media screen and (min-width: variables.$tablet-screen-size) {
-  .container {
-    margin: 0 40px;
+  section {
+    padding: 24px 40px 116px;
   }
 }
 
 @media screen and (min-width: variables.$desktop-screen-size) {
+  section {
+    padding: 38px 0 141px;
+  }
+
   .container {
     max-width: variables.$tablet-max-width;
     margin: 0 auto;
+    display: flex;
   }
 }
 
