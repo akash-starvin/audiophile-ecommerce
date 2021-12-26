@@ -1,0 +1,34 @@
+@use "../../../../assets/sass/variables.scss";
+
+section {
+  background-color: variables.$background-grey;
+}
+
+.container {
+  max-width: variables.$mobile-max-width;
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .container {
+    margin: 0 40px;
+  }
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  .container {
+    max-width: variables.$tablet-max-width;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: variables.$large-screen-size) {
+  .container {
+    max-width: variables.$large-screen-max-width;
+  }
+}
+
+@media screen and (min-width: variables.$extra-large-screen-size) {
+  .container {
+    max-width: variables.$extra-large-screen-max-width;
+  }
+}

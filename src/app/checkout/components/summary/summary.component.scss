@@ -1,0 +1,78 @@
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+@use "../../../../assets/sass/common.scss";
+
+section {
+  border-radius: variables.$border-radius;
+  background-color: variables.$white;
+  margin: 32px 20px;
+  padding: 20px;
+}
+
+.summary-text {
+  @include mixins.text(18px, 500, variables.$text-black);
+  letter-spacing: 1.29px;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+
+  &__img {
+    height: 64px;
+    width: 64px;
+    border-radius: variables.$border-radius;
+    margin-right: 16px;
+  }
+
+  &__name {
+    @include mixins.text(15px, 400, variables.$text-black);
+    line-height: 25px;
+  }
+
+  &__sub-text {
+    @include mixins.text(14px, 400, variables.$text-black);
+    opacity: 0.5;
+    line-height: 25px;
+  }
+
+  &__quantity-text {
+    font-size: 15px;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+
+  &__title {
+    @include mixins.text(15px, 400, variables.$text-black);
+    opacity: 0.5;
+    line-height: 25px;
+    text-transform: uppercase;
+  }
+
+  &__amount {
+    @include mixins.text(18px, 500, variables.$text-black);
+    line-height: 22px;
+  }
+}
+
+.continue-btn {
+  @include mixins.button(fill, variables.$theme_orange, 100%);
+}
+
+.theme-color {
+  color: variables.$theme_orange;
+}
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}
