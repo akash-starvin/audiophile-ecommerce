@@ -5,7 +5,7 @@
 section {
   border-radius: variables.$border-radius;
   background-color: variables.$white;
-  margin: 32px 20px;
+  margin-top: 32px;
   padding: 20px;
 }
 
@@ -75,4 +75,11 @@ section {
 
 .mt-32 {
   margin-top: 32px;
+}
+
+@media screen and (min-width: variables.$desktop-screen-size) {
+  section {
+    width: 350px;
+    margin: 0 0 0 30px;
+  }
 }
