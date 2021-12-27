@@ -27,8 +27,12 @@
     </div>
     <div class="footer mt-24">
       <span class="footer__title">Grand Total</span>
-      <h2 class="footer__amount theme-color">{{ totalCost | currency }}</h2>
+      <h2 class="footer__amount theme-color">
+        {{ grandTotalCost | currency }}
+      </h2>
     </div>
-    <button class="continue-btn mt-32">Continue & Pay</button>
+    <button class="continue-btn mt-32" (click)="openConfirmationDialog()">
+      Continue & Pay
+    </button>
   </div>
 </section>

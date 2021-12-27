@@ -1,0 +1,50 @@
+<div class="container">
+  <img
+    src="../../../../assets/icons/icon-check-mark.svg"
+    alt="check"
+    width="64"
+    height="64"
+  />
+  <h1 class="container__title">Thank you for your order</h1>
+  <span class="container__message"
+    >You will receive an email confirmation shortly.</span
+  >
+  <div class="container__products-info">
+    <div class="container__products-info__header">
+      <div class="item">
+        <img
+          class="item__img"
+          [src]="data.cartProduct.image"
+          alt="cart-image"
+          width="50"
+          height="50"
+        />
+        <div class="d-flex space-between w-100">
+          <div>
+            <h3 class="item__name">{{ data.cartProduct.name }}</h3>
+            <span class="item__sub-text">{{
+              data.cartProduct.price | currency
+            }}</span>
+          </div>
+          <span class="item__sub-text item__quantity-text"
+            >x{{ data.cartProduct.quantity }}</span
+          >
+        </div>
+      </div>
+      <span *ngIf="data.cartItemsCount > 0" class="item__sub-text pl-50"
+        >and {{ data.cartItemsCount }} other item(s)</span
+      >
+    </div>
+    <div class="container__products-info__footer">
+      <h3 class="container__products-info__footer__grand-total-text">
+        Grand Total
+      </h3>
+      <h3 class="container__products-info__footer__grand-total-amount">
+        {{ data.grandTotal | currency }}
+      </h3>
+    </div>
+  </div>
+  <button class="container__home-btn" routerLink="/" mat-dialog-close>
+    Back to home
+  </button>
+</div>

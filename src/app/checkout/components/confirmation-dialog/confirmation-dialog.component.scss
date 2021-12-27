@@ -1,0 +1,101 @@
+@use "../../../../assets/sass/mixins.scss";
+@use "../../../../assets/sass/variables.scss";
+@use "../../../../assets/sass/common.scss";
+
+.container {
+  border-radius: variables.$border-radius;
+
+  &__title {
+    @include mixins.text(24px, 500, variables.$text-black);
+    letter-spacing: 0.86px;
+    line-height: 28px;
+    margin: 23px auto 16px;
+    text-transform: uppercase;
+  }
+
+  &__message {
+    @include mixins.text(15px, 500, variables.$text-black);
+    opacity: 0.5;
+    line-height: 25px;
+  }
+
+  &__home-btn {
+    @include mixins.button(fill, variables.$theme-orange, 100%);
+  }
+}
+
+.container__products-info {
+  margin: 24px 0;
+  border-radius: variables.$border-radius;
+  overflow: hidden;
+
+  &__header {
+    background-color: variables.$background-grey;
+    padding: 24px;
+  }
+
+  &__footer {
+    background-color: variables.$black;
+    padding: 15px 24px 20px;
+
+    &__grand-total-text {
+      @include mixins.text(15px, 400, variables.$text-white);
+      opacity: 0.5;
+      line-height: 25px;
+      padding-bottom: 8px;
+    }
+
+    &__grand-total-amount {
+      @include mixins.text(18px, 400, variables.$text-white);
+      line-height: 22px;
+    }
+  }
+}
+
+.container__products-info__header .item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 16px;
+
+  &__img {
+    margin-right: 18px;
+  }
+
+  &__name {
+    @include mixins.text(15px, 400, variables.$text-black);
+    line-height: 25px;
+  }
+
+  &__sub-text {
+    @include mixins.text(14px, 400, variables.$text-black);
+    opacity: 0.5;
+    line-height: 25px;
+  }
+
+  &__quantity-text {
+    font-size: 15px;
+  }
+}
+
+.pl-50 {
+  padding-left: 50px;
+}
+
+@media screen and (min-width: variables.$tablet-screen-size) {
+  .container__title {
+    @include mixins.text(32px, 500, variables.$text-black);
+    line-height: 38px;
+  }
+
+  .container__products-info {
+    display: flex;
+
+    &__header {
+      padding: 12px;
+    }
+
+    &__footer {
+      border-radius: 0 8px 8px 0;
+    }
+  }
+}

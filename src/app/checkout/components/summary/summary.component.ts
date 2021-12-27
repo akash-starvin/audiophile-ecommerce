@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Constants } from 'src/app/core/constants/Constants';
 import { Cart } from 'src/app/product/interface/cart';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'checkout-summary',
@@ -11,8 +13,10 @@ export class SummaryComponent implements OnInit {
   shippingCost: number = 50;
   cartItems: Cart[] = [];
   totalCost: number = 0;
+  grandTotalCost: number = 0;
   vatAmount: number = 0;
-  constructor() {}
+
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getLocalCartItems();
@@ -33,7 +37,7 @@ export class SummaryComponent implements OnInit {
   }
 
   clearStorage() {
-    localStorage.setItem(Constants.LOCAL_STORAGE_KEY, JSON.stringify(''));
+    localStorage.setItem(Constants.LOCAL_STORAGE_KEY, JSON.stringify([]));
   }
 
   calculateTotalCost() {
@@ -42,9 +46,24 @@ export class SummaryComponent implements OnInit {
       this.totalCost += element.price * element.quantity;
     });
     this.vatAmount = this.calculateVat(this.totalCost);
+    this.grandTotalCost = this.totalCost + this.shippingCost;
   }
 
   calculateVat(amount: number) {
-    return amount * 0.2;
+    return Math.ceil(amount * 0.2);
+  }
+
+  openConfirmationDialog() {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: {
+        cartProduct: this.cartItems[0],
+        cartItemsCount: this.cartItems.length - 1,
+        grandTotal: this.grandTotalCost,
+      },
+      disableClose: true,
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      //TODO: this.clearStorage();
+    });
   }
 }
