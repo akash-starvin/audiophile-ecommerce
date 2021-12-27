@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormService } from '../../service/form.service';
 
 @Component({
   selector: 'checkout-container',
@@ -7,14 +6,7 @@ import { FormService } from '../../service/form.service';
   styleUrls: ['./container.component.scss'],
 })
 export class ContainerComponent implements OnInit {
-  url: string = '../../../../assets/json/form.json';
-  formResponse: any;
+  constructor() {}
 
-  constructor(private productDataService: FormService) {}
-
-  ngOnInit(): void {
-    this.productDataService.getFormData(this.url).subscribe((data: any) => {
-      this.formResponse = data;
-    });
-  }
+  ngOnInit(): void {}
 }

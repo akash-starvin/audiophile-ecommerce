@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormService } from '../../service/form.service';
 
 @Component({
   selector: 'checkout-form',
@@ -6,9 +8,31 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-  @Input() data: any;
+  url: string = '../../../../assets/json/form.json';
+  formResponse: any;
+  formGroup!: FormGroup;
 
-  constructor() {}
+  constructor(
+    private productDataService: FormService,
+    private readonly formBuilder: FormBuilder
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.productDataService.getFormData(this.url).subscribe((data: any) => {
+      this.formResponse = data;
+      this.initForm();
+    });
+  }
+
+  initForm() {
+    this.formGroup = this.formBuilder.group({});
+    this.formResponse.forEach((section: any) => {
+      section.fields.forEach((field: any) => {
+        this.formGroup.addControl(
+          field.key,
+          this.formBuilder.group({ Name: [field.key], Value: [''] })
+        );
+      });
+    });
+  }
 }

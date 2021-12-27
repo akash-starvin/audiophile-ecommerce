@@ -17,7 +17,7 @@
       },
       {
         "name": "Email Address",
-        "key": "email-address",
+        "key": "emailaddress",
         "type": "email",
         "fieldType": "TextField",
         "placeholder": "alexei@mail.com",
@@ -28,7 +28,7 @@
       },
       {
         "name": "Phone Number",
-        "key": "phone-number",
+        "key": "phonenumber",
         "type": "number",
         "fieldType": "TextField",
         "placeholder": "+1 202-555-0136",
