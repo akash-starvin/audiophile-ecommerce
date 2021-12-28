@@ -1,34 +1,47 @@
 <section>
   <h1 class="page-title">Checkout</h1>
-  <div *ngFor="let section of formResponse" class="container">
-    <h3 class="container__title">{{ section.sectionName }}</h3>
-    <form class="d-flex" [formGroup]="formGroup">
-      <div
-        *ngFor="let field of section.fields"
-        class="container__field"
-        [ngClass]="{ 'full-width': field.fullWidth }"
-      >
-        <h5 class="container__field__text">{{ field.name }}</h5>
-        <input
-          *ngIf="field.fieldType === 'TextField'"
-          [type]="field.type"
-          class="container__field__input"
-          [placeholder]="field.placeholder"
-          [formControlName]="field.key"
-        />
+  <form *ngIf="formGroup" [formGroup]="formGroup">
+    <div *ngFor="let section of formResponse" class="container">
+      <h3 class="container__title">{{ section.sectionName }}</h3>
+      <div class="d-flex">
         <div
-          *ngIf="field.fieldType === 'FieldRadio'"
-          class="container__field__radio"
+          *ngFor="let field of section.fields"
+          class="container__field"
+          [ngClass]="{ 'full-width': field.fullWidth }"
         >
-          <input
-            [type]="field.type"
-            [formControlName]="field.key"
-            [value]="field.key"
-            name="section.sectionName"
-          />
-          <label [for]="field.key">{{ field.placeholder }}</label>
+          <ng-container
+            *ngIf="
+              !(
+                isCashOnDelivery &&
+                (field.key === 'emoneynumber' || field.key === 'emoneypin')
+              )
+            "
+          >
+            <h5 class="container__field__text">{{ field.name }}</h5>
+            <input
+              *ngIf="field.fieldType === 'TextField'"
+              [type]="field.type"
+              class="container__field__input"
+              [placeholder]="field.placeholder"
+              [formControlName]="field.key"
+            />
+            <div
+              *ngIf="field.fieldType === 'FieldRadio'"
+              class="container__field__radio"
+            >
+              <input
+                [type]="field.type"
+                [formControlName]="field.key"
+                [value]="field.key"
+                name="section.sectionName"
+                (change)="changeRadioStatus(field.key)"
+                [checked]="field.mandatory"
+              />
+              <label [for]="field.key">{{ field.placeholder }}</label>
+            </div>
+          </ng-container>
         </div>
       </div>
-    </form>
-  </div>
+    </div>
+  </form>
 </section>

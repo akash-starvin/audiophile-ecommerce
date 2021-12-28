@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { FormService } from '../../service/form.service';
 
 @Component({
@@ -11,6 +16,7 @@ export class FormComponent implements OnInit {
   url: string = '../../../../assets/json/form.json';
   formResponse: any;
   formGroup!: FormGroup;
+  isCashOnDelivery: boolean = false;
 
   constructor(
     private productDataService: FormService,
@@ -31,5 +37,17 @@ export class FormComponent implements OnInit {
         this.formGroup.addControl(field.key, new FormControl(''));
       });
     });
+  }
+
+  changeRadioStatus(key: string) {
+    if (key === 'cashondelivery') {
+      this.formGroup.removeControl('emoneynumber');
+      this.formGroup.removeControl('emoneypin');
+      this.isCashOnDelivery = true;
+    } else {
+      this.formGroup.addControl('emoneynumber', new FormControl(''));
+      this.formGroup.addControl('emoneypin', new FormControl(''));
+      this.isCashOnDelivery = false;
+    }
   }
 }

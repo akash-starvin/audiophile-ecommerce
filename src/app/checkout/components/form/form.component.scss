@@ -17,6 +17,10 @@ section {
   text-transform: uppercase;
 }
 
+.container {
+  margin-bottom: 8px;
+}
+
 .container__title {
   @include mixins.text(13px, 400, variables.$theme-orange);
   letter-spacing: 0.93px;
@@ -32,8 +36,7 @@ section {
   &__text {
     @include mixins.text(12px, 400, variables.$text-black);
     letter-spacing: -0.21px;
-    line-height: 14px;
-    margin-bottom: 11px;
+    height: 14px;
   }
 
   &__input,
@@ -42,7 +45,7 @@ section {
     border-radius: variables.$border-radius;
     border: 1px solid variables.$input-border;
     padding: 0 24px;
-    margin-bottom: 24px;
+    margin: 11px 0 24px;
     cursor: pointer;
     @include mixins.text(14px, 400, variables.$text-black);
     letter-spacing: -0.25px;
@@ -82,6 +85,10 @@ section {
 }
 
 @media screen and (min-width: variables.$tablet-screen-size) {
+  .container {
+    margin-bottom: 29px;
+  }
+
   .d-flex {
     display: flex;
     justify-content: space-between;

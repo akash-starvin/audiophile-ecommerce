@@ -86,7 +86,7 @@
         "fieldType": "FieldRadio",
         "placeholder": "e-Money",
         "fullWidth": false,
-        "mandatory": false
+        "mandatory": true
       },
       {
         "name": "",
