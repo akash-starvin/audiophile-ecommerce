@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -17,16 +17,24 @@ export class FormComponent implements OnInit {
   formResponse: any;
   formGroup!: FormGroup;
   isCashOnDelivery: boolean = false;
+  summaryClick: boolean = false;
 
   constructor(
-    private productDataService: FormService,
+    private formSerive: FormService,
     private readonly formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
-    this.productDataService.getFormData(this.url).subscribe((data: any) => {
+    this.formSerive.getFormData(this.url).subscribe((data: any) => {
       this.formResponse = data;
       this.initForm();
+    });
+
+    this.formSerive.checkForm.subscribe((result) => {
+      this.summaryClick = result;
+      if (this.summaryClick && this.formGroup?.status === 'VALID') {
+        this.formSerive.validForm.next(true);
+      }
     });
   }
 
@@ -34,7 +42,31 @@ export class FormComponent implements OnInit {
     this.formGroup = this.formBuilder.group({});
     this.formResponse.forEach((section: any) => {
       section.fields.forEach((field: any) => {
-        this.formGroup.addControl(field.key, new FormControl(''));
+        switch (field.type) {
+          case 'phonenumber':
+            this.formGroup.addControl(
+              field.key,
+              new FormControl('', [
+                Validators.required,
+                Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),
+              ])
+            );
+            break;
+          case 'email':
+            this.formGroup.addControl(
+              field.key,
+              new FormControl('', [Validators.required, Validators.email])
+            );
+            break;
+          case 'radio':
+            this.formGroup.addControl(field.key, new FormControl(''));
+            break;
+          default:
+            this.formGroup.addControl(
+              field.key,
+              new FormControl('', Validators.required)
+            );
+        }
       });
     });
   }
@@ -45,8 +77,14 @@ export class FormComponent implements OnInit {
       this.formGroup.removeControl('emoneypin');
       this.isCashOnDelivery = true;
     } else {
-      this.formGroup.addControl('emoneynumber', new FormControl(''));
-      this.formGroup.addControl('emoneypin', new FormControl(''));
+      this.formGroup.addControl(
+        'emoneynumber',
+        new FormControl('', Validators.required)
+      );
+      this.formGroup.addControl(
+        'emoneypin',
+        new FormControl('', Validators.required)
+      );
       this.isCashOnDelivery = false;
     }
   }

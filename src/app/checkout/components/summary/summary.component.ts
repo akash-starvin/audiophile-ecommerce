@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Constants } from 'src/app/core/constants/Constants';
 import { Cart } from 'src/app/product/interface/cart';
+import { FormService } from '../../service/form.service';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
@@ -16,11 +17,16 @@ export class SummaryComponent implements OnInit {
   grandTotalCost: number = 0;
   vatAmount: number = 0;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private formSerive: FormService) {}
 
   ngOnInit(): void {
     this.getLocalCartItems();
     this.calculateTotalCost();
+    this.formSerive.validForm.subscribe((valid) => {
+      if (valid) {
+        this.openConfirmationDialog();
+      }
+    });
   }
 
   getLocalCartItems() {
@@ -63,7 +69,11 @@ export class SummaryComponent implements OnInit {
       disableClose: true,
     });
     dialogRef.afterClosed().subscribe((result) => {
-      //TODO: this.clearStorage();
+      this.clearStorage();
     });
+  }
+
+  checkFormValid() {
+    this.formSerive.checkForm.next(true);
   }
 }

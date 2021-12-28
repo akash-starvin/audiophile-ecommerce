@@ -17,13 +17,50 @@
               )
             "
           >
-            <h5 class="container__field__text">{{ field.name }}</h5>
+            <div class="d-flex space-between">
+              <h5
+                class="container__field__text"
+                [ngClass]="{
+                  'text-error':
+                    summaryClick === true &&
+                    (formGroup.controls[field.key].value === '' ||
+                      formGroup.controls[field.key].status === 'INVALID') &&
+                    field.type !== 'radio'
+                }"
+              >
+                {{ field.name }}
+              </h5>
+              <span
+                *ngIf="
+                  summaryClick &&
+                  formGroup.controls[field.key].value === '' &&
+                  field.type !== 'radio'
+                "
+                class="container__field__text text-error"
+                >This field can't be empty</span
+              ><span
+                *ngIf="
+                  summaryClick &&
+                  formGroup.controls[field.key].value !== '' &&
+                  formGroup.controls[field.key].status === 'INVALID'
+                "
+                class="container__field__text text-error"
+                >Wrong format</span
+              >
+            </div>
             <input
               *ngIf="field.fieldType === 'TextField'"
               [type]="field.type"
               class="container__field__input"
               [placeholder]="field.placeholder"
               [formControlName]="field.key"
+              [id]="field.key"
+              [ngClass]="{
+                'input-error':
+                  summaryClick === true &&
+                  (formGroup.controls[field.key].value === '' ||
+                    formGroup.controls[field.key].status === 'INVALID')
+              }"
             />
             <div
               *ngIf="field.fieldType === 'FieldRadio'"
@@ -36,6 +73,12 @@
                 name="section.sectionName"
                 (change)="changeRadioStatus(field.key)"
                 [checked]="field.mandatory"
+                [ngClass]="{
+                  'input-error':
+                    summaryClick === true &&
+                    (formGroup.controls[field.key].value === '' ||
+                      formGroup.controls[field.key].status === 'INVALID')
+                }"
               />
               <label [for]="field.key">{{ field.placeholder }}</label>
             </div>

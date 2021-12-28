@@ -78,6 +78,14 @@ section {
   .mb {
     margin-bottom: 8px;
   }
+
+  .text-error {
+    color: variables.$error;
+  }
+
+  .input-error {
+    border-color: variables.$error;
+  }
 }
 
 .d-flex {
