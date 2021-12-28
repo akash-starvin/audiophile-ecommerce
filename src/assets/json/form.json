@@ -10,10 +10,8 @@
         "type": "text",
         "fieldType": "TextField",
         "placeholder": "Alexei Ward",
-        "errorMessage": "Please enter a name",
         "fullWidth": false,
-        "mandatory": true,
-        "readOnly": false
+        "mandatory": true
       },
       {
         "name": "Email Address",
@@ -21,10 +19,8 @@
         "type": "email",
         "fieldType": "TextField",
         "placeholder": "alexei@mail.com",
-        "errorMessage": "Please enter a email address",
         "fullWidth": false,
-        "mandatory": true,
-        "readOnly": false
+        "mandatory": true
       },
       {
         "name": "Phone Number",
@@ -32,10 +28,92 @@
         "type": "number",
         "fieldType": "TextField",
         "placeholder": "+1 202-555-0136",
-        "errorMessage": "Please enter a phone number",
         "fullWidth": false,
-        "mandatory": true,
-        "readOnly": false
+        "mandatory": true
+      }
+    ]
+  },
+  {
+    "sectionName": "Shipping Info",
+    "type": "section",
+    "fields": [
+      {
+        "name": "Address",
+        "key": "address",
+        "type": "text",
+        "fieldType": "TextField",
+        "placeholder": "1137 Williams Avenue",
+        "fullWidth": true,
+        "mandatory": true
+      },
+      {
+        "name": "ZIP code",
+        "key": "zipcode",
+        "type": "number",
+        "fieldType": "TextField",
+        "placeholder": "10001",
+        "fullWidth": false,
+        "mandatory": true
+      },
+      {
+        "name": "City",
+        "key": "city",
+        "type": "text",
+        "fieldType": "TextField",
+        "placeholder": "New York",
+        "fullWidth": false,
+        "mandatory": true
+      },
+      {
+        "name": "Country",
+        "key": "country",
+        "type": "text",
+        "fieldType": "TextField",
+        "placeholder": "United States",
+        "fullWidth": false,
+        "mandatory": true
+      }
+    ]
+  },
+  {
+    "sectionName": "Payment Details",
+    "type": "section",
+    "fields": [
+      {
+        "name": "Payment Method",
+        "key": "e-money",
+        "type": "radio",
+        "fieldType": "FieldRadio",
+        "placeholder": "e-Money",
+        "fullWidth": false,
+        "mandatory": false
+      },
+      {
+        "name": "",
+        "key": "cashondelivery",
+        "type": "radio",
+        "fieldType": "FieldRadio",
+        "placeholder": "Cash on Delivery",
+        "fullWidth": false,
+        "mandatory": false
+      },
+      {
+        "name": "e-Money Number",
+        "key": "emoneynumber",
+        "type": "number",
+        "fieldType": "TextField",
+        "placeholder": "238521993",
+        "fullWidth": false,
+        "mandatory": true
+      },
+      {
+        "name": "e-Money Pin",
+        "key": "emoneypin",
+        "type": "number",
+        "fieldType": "TextField",
+        "placeholder": "6891",
+        "fullWidth": false,
+        "mandatory": true
       }
     ]
   }
