@@ -14,8 +14,20 @@
           [type]="field.type"
           class="container__field__input"
           [placeholder]="field.placeholder"
-          [formArrayName]="field.key"
+          [formControlName]="field.key"
         />
+        <div
+          *ngIf="field.fieldType === 'FieldRadio'"
+          class="container__field__radio"
+        >
+          <input
+            [type]="field.type"
+            [formControlName]="field.key"
+            [value]="field.key"
+            name="section.sectionName"
+          />
+          <label [for]="field.key">{{ field.placeholder }}</label>
+        </div>
       </div>
     </form>
   </div>

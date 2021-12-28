@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { FormService } from '../../service/form.service';
 
 @Component({
@@ -28,10 +28,7 @@ export class FormComponent implements OnInit {
     this.formGroup = this.formBuilder.group({});
     this.formResponse.forEach((section: any) => {
       section.fields.forEach((field: any) => {
-        this.formGroup.addControl(
-          field.key,
-          this.formBuilder.group({ Name: [field.key], Value: [''] })
-        );
+        this.formGroup.addControl(field.key, new FormControl(''));
       });
     });
   }

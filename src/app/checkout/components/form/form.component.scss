@@ -36,7 +36,8 @@ section {
     margin-bottom: 11px;
   }
 
-  &__input {
+  &__input,
+  &__radio {
     height: 56px;
     border-radius: variables.$border-radius;
     border: 1px solid variables.$input-border;
@@ -51,7 +52,6 @@ section {
     &:focus {
       border-color: variables.$theme-orange;
       outline: variables.$theme-orange;
-
       opacity: 1;
     }
 
@@ -60,6 +60,15 @@ section {
       opacity: 0.4;
       letter-spacing: -0.25px;
       line-height: 17px;
+    }
+  }
+
+  &__radio {
+    display: flex;
+    align-items: center;
+
+    label {
+      margin-left: 16px;
     }
   }
 
@@ -84,7 +93,8 @@ section {
     margin-bottom: 22px;
   }
 
-  .container__field__input {
+  .container__field__input,
+  .container__field__radio {
     width: 39vw;
   }
 
@@ -95,7 +105,8 @@ section {
 }
 
 @media screen and (min-width: variables.$desktop-screen-size) {
-  .container__field__input {
+  .container__field__input,
+  .container__field__radio {
     width: 21vw;
   }
 
