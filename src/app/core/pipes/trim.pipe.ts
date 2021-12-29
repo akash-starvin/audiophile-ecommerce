@@ -4,7 +4,11 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'trim',
 })
 export class TrimPipe implements PipeTransform {
+  removeWordsArray = ['Headphones', 'Speaker', 'Earphones', 'Wireless'];
   transform(str: string): string {
-    return str.substr(0, str.indexOf(' '));
+    return this.removeWordsArray.reduce(
+      (result, word) => result.replace(word, ''),
+      str
+    );
   }
 }
