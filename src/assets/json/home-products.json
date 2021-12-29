@@ -1,0 +1,50 @@
+{
+  "banner": {
+    "new": true,
+    "slug": "xx99-mark-two-headphones",
+    "name": "XX99 Mark II headphones",
+    "category": "headphones",
+    "description": "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.",
+    "image": {
+      "mobile": "./../../../../assets/images/home/mobile/image-header.jpg",
+      "tablet": "./../../../../assets/images/home/tablet/image-header.jpg",
+      "desktop": "./../../../../assets/images/home/desktop/image-hero.jpg"
+    }
+  },
+  "product1": {
+    "new": false,
+    "slug": "zx9-speaker",
+    "name": "ZX9 Speaker",
+    "category": "speakers",
+    "description": "Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.",
+    "image": {
+      "mobile": "../../../../assets/images/home/mobile/image-speaker-zx9.png",
+      "tablet": "../../../../assets/images/home/tablet/image-speaker-zx9.png",
+      "desktop": "../../../../assets/images/home/desktop/image-speaker-zx9.png"
+    }
+  },
+  "product2": {
+    "new": false,
+    "slug": "zx7-speaker",
+    "name": "ZX7 Speaker",
+    "category": "speakers",
+    "description": "",
+    "image": {
+      "mobile": "../../../../assets/images/home/mobile/image-speaker-zx7.jpg",
+      "tablet": "../../../../assets/images/home/tablet/image-speaker-zx7.jpg",
+      "desktop": "../../../../assets/images/home/desktop/image-speaker-zx7.jpg"
+    }
+  },
+  "product3": {
+    "new": false,
+    "slug": "yx1-earphones",
+    "name": "YX1 Wireless Earphones",
+    "category": "earphones",
+    "description": "",
+    "image": {
+      "mobile": "../../../../assets/images/home/mobile/image-earphones-yx1.jpg",
+      "tablet": "../../../../assets/images/home/tablet/image-earphones-yx1.jpg",
+      "desktop": "../../../../assets/images/home/desktop/image-earphones-yx1.jpg"
+    }
+  }
+}
