@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Cart } from 'src/app/product/interface/cart';
 import { Product } from 'src/app/product/interface/product';
 import { Constants } from '../../constants/Constants';
@@ -12,7 +13,8 @@ export class CartComponent implements OnInit {
   cartItems: Cart[] = [];
   totalCost: number = 0;
   cartItemsCount: number = 0;
-  constructor() {}
+
+  constructor(private toastrService: ToastrService) {}
 
   ngOnInit(): void {
     this.getLocalCartItems();
@@ -37,6 +39,8 @@ export class CartComponent implements OnInit {
           this.cartItems[objIndex].quantity++;
           this.saveToLocal(this.cartItems);
           this.calculateTotalCostAndCartItems();
+        } else {
+          this.toastrService.error('You have reached maximum limit!');
         }
         break;
     }
@@ -56,11 +60,13 @@ export class CartComponent implements OnInit {
   }
 
   removeCartItem(index: number) {
+    this.toastrService.error('Product removed!');
     this.cartItems.splice(index, 1);
   }
 
   removeAllCartItems() {
     this.cartItems = [];
+    this.toastrService.error('Cart is empty!');
     this.calculateTotalCostAndCartItems();
     this.saveToLocal(this.cartItems);
   }
@@ -77,6 +83,4 @@ export class CartComponent implements OnInit {
       this.cartItemsCount += element.quantity;
     });
   }
-
-  openCheckoutPage() {}
 }

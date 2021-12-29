@@ -30,7 +30,6 @@
   <button
     class="checkout-btn"
     [ngClass]="{ 'checkout-btn__disable': cartItemsCount === 0 }"
-    (click)="openCheckoutPage()"
     routerLink="/checkout"
     mat-dialog-close
     [disabled]="cartItemsCount === 0"

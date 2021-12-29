@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Constants } from 'src/app/core/constants/Constants';
 import { Cart } from '../../interface/cart';
 import { Product } from '../../interface/product';
@@ -19,10 +20,12 @@ export class ProductCardComponent implements OnInit {
   productCount: number = 1;
   cartItems: Cart[] = [];
 
-  constructor(private productDataService: ProductDataService) {}
+  constructor(
+    private productDataService: ProductDataService,
+    private toastrService: ToastrService
+  ) {}
 
   ngOnInit(): void {}
-
   updateSelectedProduct() {
     this.productDataService.selectedProduct.next(this.data);
   }
@@ -44,6 +47,7 @@ export class ProductCardComponent implements OnInit {
       return item.id !== this.data.id;
     });
     let cartItemObject = this.createCartItemObject(this.data);
+    this.toastrService.success('Added to cart!');
     this.saveToLocalStorage(cartItemObject);
   }
 
