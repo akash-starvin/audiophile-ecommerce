@@ -7,6 +7,19 @@ section {
 
 .container {
   max-width: variables.$mobile-max-width;
+
+  &__back-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    color: variables.$text-black;
+    opacity: 0.5;
+    line-height: 25px;
+    margin-bottom: 24px;
+  }
 }
 
 @media screen and (min-width: variables.$tablet-screen-size) {
@@ -23,6 +36,13 @@ section {
   .container {
     max-width: variables.$tablet-max-width;
     margin: 0 auto;
+
+    &__back-btn {
+      margin-bottom: 38px;
+    }
+  }
+
+  .d-flex {
     display: flex;
   }
 }

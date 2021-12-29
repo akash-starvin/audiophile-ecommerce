@@ -1,6 +1,10 @@
 <section>
   <div class="container">
-    <checkout-form></checkout-form>
-    <checkout-summary></checkout-summary>
+    <button class="container__back-btn" (click)="goToPreviousPage()">
+      Go back
+    </button>
+    <div class="d-flex">
+      <checkout-form></checkout-form> <checkout-summary></checkout-summary>
+    </div>
   </div>
 </section>

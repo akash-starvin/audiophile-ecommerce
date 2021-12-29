@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'checkout-container',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./container.component.scss'],
 })
 export class ContainerComponent implements OnInit {
-  constructor() {}
+  constructor(private location: Location) {}
 
   ngOnInit(): void {}
+
+  goToPreviousPage() {
+    this.location.back();
+  }
 }
