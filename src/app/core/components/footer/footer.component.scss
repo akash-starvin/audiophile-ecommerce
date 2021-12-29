@@ -4,7 +4,6 @@
 
 section {
   background-color: variables.$background-black;
-  margin-top: 60px;
 }
 
 .container {
@@ -76,7 +75,6 @@ section {
     &__footer {
       display: flex;
       justify-content: space-between;
-      margin-top: 80px;
     }
 
     .mb {
@@ -85,10 +83,6 @@ section {
   }
 }
 @media screen and (min-width: variables.$desktop-screen-size) {
-  section {
-    margin-top: 80px;
-  }
-
   .container {
     width: variables.$tablet-max-width;
     margin: 0 auto;
