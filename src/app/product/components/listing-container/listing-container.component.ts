@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MockDataService } from 'src/app/core/services/mock-data.service';
 import { Product } from '../../interface/product';
-import { ProductDataService } from '../../service/product-data.service';
 
 @Component({
   selector: 'product-listing-container',
@@ -16,7 +16,7 @@ export class ListingContainerComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productDataService: ProductDataService
+    private mockDataService: MockDataService
   ) {}
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class ListingContainerComponent implements OnInit {
   }
 
   getAllProductData(url: string) {
-    this.productDataService.getAllProductData(url).subscribe((data) => {
+    this.mockDataService.getMockData(url).subscribe((data) => {
       this.jsonResponse = data;
       this.filterBasedOnCategory(this.productCategory);
     });

@@ -2,9 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Constants } from 'src/app/core/constants/Constants';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
+import { MockDataService } from 'src/app/core/services/mock-data.service';
 import { Cart } from '../../interface/cart';
 import { Product } from '../../interface/product';
-import { ProductDataService } from '../../service/product-data.service';
 
 @Component({
   selector: 'product-card',
@@ -22,14 +22,14 @@ export class ProductCardComponent implements OnInit {
   cartItems: Cart[] = [];
 
   constructor(
-    private productDataService: ProductDataService,
+    private mockDataService: MockDataService,
     private toastrService: ToastrService,
     private localStorageService: LocalStorageService
   ) {}
 
   ngOnInit(): void {}
   updateSelectedProduct() {
-    this.productDataService.selectedProduct.next(this.data);
+    this.mockDataService.selectedProduct.next(this.data);
   }
 
   updateCount(val: number) {
