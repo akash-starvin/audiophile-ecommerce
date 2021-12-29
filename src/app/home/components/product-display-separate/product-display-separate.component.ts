@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'home-product-display-separate',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-display-separate.component.scss'],
 })
 export class ProductDisplaySeparateComponent implements OnInit {
+  @Input() data: any;
+
   constructor() {}
 
   ngOnInit(): void {}

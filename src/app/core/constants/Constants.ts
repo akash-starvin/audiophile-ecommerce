@@ -7,6 +7,8 @@ export class Constants {
   public static PRODUCTS_JSON_PATH: string =
     '../../../../assets/json/products.json';
   public static FORM_JSON_PATH: string = '../../../../assets/json/form.json';
+  public static HOME_PRODUCT_JSON_PATH: string =
+    '../../../../assets/json/home-products.json';
   public static NavigationMenu: Menu[] = [
     {
       route: '/',

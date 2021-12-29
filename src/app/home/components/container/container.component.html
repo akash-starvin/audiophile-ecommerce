@@ -1,8 +1,20 @@
-<home-banner [data]="bannerData"></home-banner>
+<home-banner
+  *ngIf="homeProducts.banner"
+  [data]="homeProducts.banner"
+></home-banner>
 <div class="container">
   <core-category-container></core-category-container>
-  <home-product-display-large></home-product-display-large>
-  <home-product-display [data]="productDisplay"></home-product-display>
-  <home-product-display-separate></home-product-display-separate>
+  <home-product-display-large
+    *ngIf="homeProducts.product1"
+    [data]="homeProducts.product1"
+  ></home-product-display-large>
+  <home-product-display
+    *ngIf="homeProducts.product2"
+    [data]="homeProducts.product2"
+  ></home-product-display>
+  <home-product-display-separate
+    *ngIf="homeProducts.product3"
+    [data]="homeProducts.product3"
+  ></home-product-display-separate>
   <core-about></core-about>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'home-product-display-large',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-display-large.component.scss'],
 })
 export class ProductDisplayLargeComponent implements OnInit {
+  @Input() data: any;
+
   constructor() {}
 
   ngOnInit(): void {}

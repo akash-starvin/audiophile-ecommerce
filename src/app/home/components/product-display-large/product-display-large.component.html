@@ -1,28 +1,17 @@
 <div class="container">
   <picture>
-    <source
-      srcset="../../../../assets/images/home/desktop/image-speaker-zx9.png"
-      media="(min-width: 1024px)"
-    />
-    <source
-      srcset="../../../../assets/images/home/tablet/image-speaker-zx9.png"
-      media="(min-width: 768px)"
-    />
-    <img
-      src="../../../../assets/images/home/mobile/image-speaker-zx9.png"
-      alt="banner"
-      class="container__background"
-    />
+    <source [srcset]="data.image.desktop" media="(min-width: 1024px)" />
+    <source [srcset]="data.image.tablet" media="(min-width: 768px)" />
+    <img [src]="data.image.mobile" alt="banner" class="container__background" />
   </picture>
   <div class="align-left">
-    <h1 class="container__title">ZX9 SPEAKER</h1>
+    <h1 class="container__title">{{ data.name }}</h1>
     <p class="container__description">
-      Upgrade to premium speakers that are phenomenally built to deliver truly
-      remarkable sound.
+      {{ data.description }}
     </p>
     <button
       class="container__see-product-btn"
-      routerLink="/speakers/zx9-speaker"
+      [routerLink]="['/' + data.category, data.slug]"
     >
       See product
     </button>
