@@ -4,6 +4,7 @@ import { MockDataService } from 'src/app/core/services/mock-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { Constants } from 'src/app/core/constants/Constants';
+import { Product } from '../../interface/product';
 
 @Component({
   selector: 'product-detail',
@@ -45,7 +46,8 @@ export class ProductDetailComponent implements OnInit {
       this.productData = this.getProductBasedOnKey(this.productKey);
     });
   }
-  getProductBasedOnKey(key: string): any {
+
+  getProductBasedOnKey(key: string): Product {
     return this.localStorageService.getSpecificData(
       Constants.LOCAL_STORAGE_PRODUCTS_LIST,
       key

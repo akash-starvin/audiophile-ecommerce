@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Constants } from 'src/app/core/constants/Constants';
 import { MockDataService } from 'src/app/core/services/mock-data.service';
 import { Others } from '../../interface/others';
+import { Product } from '../../interface/product';
 
 @Component({
   selector: 'recomended-products',
@@ -10,8 +12,7 @@ import { Others } from '../../interface/others';
 export class RecomendedProductsComponent implements OnInit {
   @Input()
   products: Others[] = [];
-  URL_PRODUCT_JSON: string = '../../../../assets/json/products.json';
-  jsonResponse: any;
+  jsonResponse: Product[] = [];
   searchProductId: string = '';
 
   constructor(private mockDataService: MockDataService) {}
@@ -33,8 +34,8 @@ export class RecomendedProductsComponent implements OnInit {
 
   fetchAllProducts() {
     this.mockDataService
-      .getMockData(this.URL_PRODUCT_JSON)
-      .subscribe((data: any) => {
+      .getMockData(Constants.PRODUCTS_JSON_PATH)
+      .subscribe((data: Product[]) => {
         this.jsonResponse = data;
         this.getProduct();
       });
