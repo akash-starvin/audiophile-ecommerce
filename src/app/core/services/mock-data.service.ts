@@ -7,6 +7,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class MockDataService {
   selectedProduct = new BehaviorSubject({});
+  checkForm = new BehaviorSubject(false);
+  validForm = new BehaviorSubject(false);
 
   constructor(private http: HttpClient) {}
 

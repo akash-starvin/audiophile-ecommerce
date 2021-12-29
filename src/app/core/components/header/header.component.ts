@@ -17,6 +17,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   openCart() {
-    const dialogRef = this.dialog.open(CartComponent);
+    this.dialog.open(CartComponent);
   }
 }

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Constants } from 'src/app/core/constants/Constants';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
+import { MockDataService } from 'src/app/core/services/mock-data.service';
 import { Cart } from 'src/app/product/interface/cart';
-import { FormService } from '../../service/form.service';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
@@ -20,14 +20,14 @@ export class SummaryComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    private formSerive: FormService,
+    private mockDataService: MockDataService,
     private localStorageService: LocalStorageService
   ) {}
 
   ngOnInit(): void {
     this.getLocalCartItems();
     this.calculateTotalCost();
-    this.formSerive.validForm.subscribe((valid) => {
+    this.mockDataService.validForm.subscribe((valid: any) => {
       if (valid) {
         this.openConfirmationDialog();
       }
@@ -72,6 +72,6 @@ export class SummaryComponent implements OnInit {
   }
 
   checkFormValid() {
-    this.formSerive.checkForm.next(true);
+    this.mockDataService.checkForm.next(true);
   }
 }

@@ -1,11 +1,12 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { FormService } from '../../service/form.service';
+import { Constants } from 'src/app/core/constants/Constants';
+import { MockDataService } from 'src/app/core/services/mock-data.service';
 
 @Component({
   selector: 'checkout-form',
@@ -13,27 +14,28 @@ import { FormService } from '../../service/form.service';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-  url: string = '../../../../assets/json/form.json';
   formResponse: any;
   formGroup!: FormGroup;
   isCashOnDelivery: boolean = false;
   summaryClick: boolean = false;
 
   constructor(
-    private formSerive: FormService,
+    private mockDataService: MockDataService,
     private readonly formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
-    this.formSerive.getFormData(this.url).subscribe((data: any) => {
-      this.formResponse = data;
-      this.initForm();
-    });
+    this.mockDataService
+      .getMockData(Constants.FORM_JSON_PATH)
+      .subscribe((data: any) => {
+        this.formResponse = data;
+        this.initForm();
+      });
 
-    this.formSerive.checkForm.subscribe((result) => {
+    this.mockDataService.checkForm.subscribe((result) => {
       this.summaryClick = result;
       if (this.summaryClick && this.formGroup?.status === 'VALID') {
-        this.formSerive.validForm.next(true);
+        this.mockDataService.validForm.next(true);
       }
     });
   }

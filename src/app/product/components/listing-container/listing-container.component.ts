@@ -10,7 +10,6 @@ import { Product } from '../../interface/product';
   styleUrls: ['./listing-container.component.scss'],
 })
 export class ListingContainerComponent implements OnInit {
-  URL_PRODUCT_JSON: string = '../../../../assets/json/products.json';
   productCategory: string = '';
   jsonResponse: Product[] = [];
   showProducts: Product[] = [];
