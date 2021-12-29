@@ -6,6 +6,11 @@
   </picture>
   <div class="container__body">
     <h1 class="container__body__title">{{ data.name }}</h1>
-    <button class="container__body__see-product-btn">See product</button>
+    <button
+      class="container__body__see-product-btn"
+      [routerLink]="['/' + data.category, data.slug]"
+    >
+      See product
+    </button>
   </div>
 </div>

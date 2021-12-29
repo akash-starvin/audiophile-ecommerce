@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Constants } from 'src/app/core/constants/Constants';
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
+import { MockDataService } from 'src/app/core/services/mock-data.service';
+import { Product } from 'src/app/product/interface/product';
 
 @Component({
   selector: 'home-container',
@@ -31,7 +35,22 @@ export class ContainerComponent implements OnInit {
     },
   };
 
-  constructor() {}
+  constructor(
+    private mockDataService: MockDataService,
+    private localStorageService: LocalStorageService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllProductData(Constants.PRODUCTS_JSON_PATH);
+  }
+
+  getAllProductData(url: string) {
+    this.mockDataService.getMockData(url).subscribe((data) => {
+      this.saveToLocalStorage(data, Constants.LOCAL_STORAGE_PRODUCTS_LIST);
+    });
+  }
+
+  saveToLocalStorage(object: Product[], path: string) {
+    this.localStorageService.saveObject(object, path);
+  }
 }

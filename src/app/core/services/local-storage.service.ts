@@ -24,4 +24,10 @@ export class LocalStorageService {
   deleteObject(path: string) {
     localStorage.setItem(path, JSON.stringify([]));
   }
+
+  getSpecificData(path: string, key: string) {
+    let list = this.getSavedObject(path);
+    list = list.filter((item: any) => item.slug === key);
+    return list[0];
+  }
 }

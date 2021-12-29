@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MockDataService } from 'src/app/core/services/mock-data.service';
+import { Constants } from 'src/app/core/constants/Constants';
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { Product } from '../../interface/product';
 
 @Component({
@@ -16,11 +17,11 @@ export class ListingContainerComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private mockDataService: MockDataService
+    private localStorageService: LocalStorageService
   ) {}
 
   ngOnInit() {
-    this.getAllProductData(this.URL_PRODUCT_JSON);
+    this.getAllProductData(Constants.LOCAL_STORAGE_PRODUCTS_LIST);
 
     this.route?.parent?.url.subscribe((url) => {
       this.productCategory = url[0].path;
@@ -28,11 +29,9 @@ export class ListingContainerComponent implements OnInit {
     });
   }
 
-  getAllProductData(url: string) {
-    this.mockDataService.getMockData(url).subscribe((data) => {
-      this.jsonResponse = data;
-      this.filterBasedOnCategory(this.productCategory);
-    });
+  getAllProductData(path: string) {
+    this.jsonResponse = this.localStorageService.getSavedObject(path);
+    this.filterBasedOnCategory(this.productCategory);
   }
 
   filterBasedOnCategory(category: string) {

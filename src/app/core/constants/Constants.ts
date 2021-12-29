@@ -2,7 +2,11 @@ import { Menu } from '../interface/menu';
 
 export class Constants {
   public static LOCAL_STORAGE_CART: string = 'AudioPhileCart';
+  public static LOCAL_STORAGE_PRODUCTS_LIST: string = 'AudioPhileProductList';
   public static TOAST_POSITION: string = 'toast-bottom-center';
+  public static PRODUCTS_JSON_PATH: string =
+    '../../../../assets/json/products.json';
+  public static FORM_JSON_PATH: string = '../../../../assets/json/form.json';
   public static NavigationMenu: Menu[] = [
     {
       route: '/',
