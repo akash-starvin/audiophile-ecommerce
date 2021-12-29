@@ -29,11 +29,7 @@ export class ListingContainerComponent implements OnInit {
   }
 
   getAllProductData(url: string) {
-<<<<<<< HEAD
     this.mockDataService.getMockData(url).subscribe((data) => {
-=======
-    this.mockDataService.getAllProductData(url).subscribe((data) => {
->>>>>>> 31e255fceda10587226792bcd2796cd0a331851e
       this.jsonResponse = data;
       this.filterBasedOnCategory(this.productCategory);
     });

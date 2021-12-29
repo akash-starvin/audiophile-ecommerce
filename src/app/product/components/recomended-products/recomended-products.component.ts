@@ -33,11 +33,7 @@ export class RecomendedProductsComponent implements OnInit {
 
   fetchAllProducts() {
     this.mockDataService
-<<<<<<< HEAD
       .getMockData(this.URL_PRODUCT_JSON)
-=======
-      .getAllProductData(this.URL_PRODUCT_JSON)
->>>>>>> 31e255fceda10587226792bcd2796cd0a331851e
       .subscribe((data: any) => {
         this.jsonResponse = data;
         this.getProduct();
