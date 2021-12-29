@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MockDataService } from 'src/app/core/services/mock-data.service';
 import { Others } from '../../interface/others';
-import { ProductDataService } from '../../service/product-data.service';
 
 @Component({
   selector: 'recomended-products',
@@ -14,7 +14,7 @@ export class RecomendedProductsComponent implements OnInit {
   jsonResponse: any;
   searchProductId: string = '';
 
-  constructor(private productDataService: ProductDataService) {}
+  constructor(private mockDataService: MockDataService) {}
 
   ngOnInit(): void {}
 
@@ -28,13 +28,13 @@ export class RecomendedProductsComponent implements OnInit {
       (obj: { slug: string }) => obj.slug == this.searchProductId
     );
     window.scroll({ top: 0, behavior: 'smooth' });
-    this.productDataService.selectedProduct.next(this.jsonResponse[objIndex]);
+    this.mockDataService.selectedProduct.next(this.jsonResponse[objIndex]);
   }
 
   fetchAllProducts() {
-    this.productDataService
+    this.mockDataService
       .getAllProductData(this.URL_PRODUCT_JSON)
-      .subscribe((data) => {
+      .subscribe((data: any) => {
         this.jsonResponse = data;
         this.getProduct();
       });
