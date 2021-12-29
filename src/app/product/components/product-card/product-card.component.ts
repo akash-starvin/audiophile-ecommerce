@@ -36,11 +36,17 @@ export class ProductCardComponent implements OnInit {
     switch (val) {
       case -1:
         if (this.productCount > 1) this.productCount--;
-        else this.toastrService.error('Minimum 1 item!');
+        else
+          this.toastrService.error('Minimum 1 item!', '', {
+            positionClass: Constants.TOAST_POSITION,
+          });
         break;
       case 1:
         if (this.productCount < this.MAX_COUNT) this.productCount++;
-        else this.toastrService.error('Maximum 10 items allowed!');
+        else
+          this.toastrService.error('Maximum 10 items allowed!', '', {
+            positionClass: Constants.TOAST_POSITION,
+          });
         break;
     }
   }
@@ -60,7 +66,9 @@ export class ProductCardComponent implements OnInit {
       this.cartItems,
       Constants.LOCAL_STORAGE_CART
     );
-    this.toastrService.success('Added to cart!');
+    this.toastrService.success('Added to cart!', '', {
+      positionClass: Constants.TOAST_POSITION,
+    });
   }
 
   createCartItemObject(product: Product): Cart {

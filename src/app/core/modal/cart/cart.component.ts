@@ -43,7 +43,9 @@ export class CartComponent implements OnInit {
           this.saveToLocal(this.cartItems);
           this.calculateTotalCostAndCartItems();
         } else {
-          this.toastrService.error('You have reached maximum limit!');
+          this.toastrService.error('You have reached maximum limit!', '', {
+            positionClass: Constants.TOAST_POSITION,
+          });
         }
         break;
     }
@@ -56,13 +58,17 @@ export class CartComponent implements OnInit {
   }
 
   removeCartItem(index: number) {
-    this.toastrService.error('Product removed!');
+    this.toastrService.error('Product removed!', '', {
+      positionClass: Constants.TOAST_POSITION,
+    });
     this.cartItems.splice(index, 1);
   }
 
   removeAllCartItems() {
     this.cartItems = [];
-    this.toastrService.error('Cart is empty!');
+    this.toastrService.error('Cart is empty!', '', {
+      positionClass: Constants.TOAST_POSITION,
+    });
     this.calculateTotalCostAndCartItems();
     this.localStorageService.deleteObject(Constants.LOCAL_STORAGE_CART);
   }

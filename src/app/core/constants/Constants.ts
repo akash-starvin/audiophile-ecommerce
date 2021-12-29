@@ -2,6 +2,7 @@ import { Menu } from '../interface/menu';
 
 export class Constants {
   public static LOCAL_STORAGE_CART: string = 'AudioPhileCart';
+  public static TOAST_POSITION: string = 'toast-bottom-center';
   public static NavigationMenu: Menu[] = [
     {
       route: '/',
