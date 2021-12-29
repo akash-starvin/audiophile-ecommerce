@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Cart } from 'src/app/product/interface/cart';
-import { Product } from 'src/app/product/interface/product';
 import { Constants } from '../../constants/Constants';
 import { LocalStorageService } from '../../services/local-storage.service';
 
@@ -76,7 +75,7 @@ export class CartComponent implements OnInit {
     this.cartItemsCount = 0;
     this.totalCost = 0;
     this.cartItems.forEach((element) => {
-      this.totalCost = element.price * element.quantity;
+      this.totalCost += element.price * element.quantity;
       this.cartItemsCount += element.quantity;
     });
   }

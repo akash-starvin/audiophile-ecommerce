@@ -36,9 +36,11 @@ export class ProductCardComponent implements OnInit {
     switch (val) {
       case -1:
         if (this.productCount > 1) this.productCount--;
+        else this.toastrService.error('Minimum 1 item!');
         break;
       case 1:
         if (this.productCount < this.MAX_COUNT) this.productCount++;
+        else this.toastrService.error('Maximum 10 items allowed!');
         break;
     }
   }

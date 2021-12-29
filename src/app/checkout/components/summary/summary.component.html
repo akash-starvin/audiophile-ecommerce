@@ -4,7 +4,7 @@
     <img class="item__img" [src]="item.image" alt="cart-image" />
     <div class="d-flex space-between w-100">
       <div>
-        <h3 class="item__name">{{ item.name }}</h3>
+        <h3 class="item__name">{{ item.name | trim }}</h3>
         <span class="item__sub-text">{{ item.price | currency }}</span>
       </div>
       <span class="item__sub-text item__quantity-text"

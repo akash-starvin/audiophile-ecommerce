@@ -29,6 +29,7 @@ import { CurrencyPipe } from './pipes/currency.pipe';
     FooterComponent,
     CartComponent,
     CurrencyPipe,
+    TrimPipe,
   ],
 })
 export class CoreModule {}

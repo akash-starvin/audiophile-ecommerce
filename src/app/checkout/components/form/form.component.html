@@ -3,7 +3,7 @@
   <form *ngIf="formGroup" [formGroup]="formGroup">
     <div *ngFor="let section of formResponse" class="container">
       <h3 class="container__title">{{ section.sectionName }}</h3>
-      <div class="d-flex">
+      <div class="display-flex">
         <div
           *ngFor="let field of section.fields"
           class="container__field"
@@ -18,7 +18,7 @@
             "
           >
             <div class="d-flex space-between">
-              <h5
+              <span
                 class="container__field__text"
                 [ngClass]="{
                   'text-error':
@@ -29,24 +29,26 @@
                 }"
               >
                 {{ field.name }}
-              </h5>
-              <span
-                *ngIf="
-                  summaryClick &&
-                  formGroup.controls[field.key].value === '' &&
-                  field.type !== 'radio'
-                "
-                class="container__field__text text-error"
-                >This field can't be empty</span
-              ><span
-                *ngIf="
-                  summaryClick &&
-                  formGroup.controls[field.key].value !== '' &&
-                  formGroup.controls[field.key].status === 'INVALID'
-                "
-                class="container__field__text text-error"
-                >Wrong format</span
-              >
+              </span>
+              <div>
+                <span
+                  *ngIf="
+                    summaryClick &&
+                    formGroup.controls[field.key].value === '' &&
+                    field.type !== 'radio'
+                  "
+                  class="container__field__text text-error"
+                  >This field can't be empty</span
+                ><span
+                  *ngIf="
+                    summaryClick &&
+                    formGroup.controls[field.key].value !== '' &&
+                    formGroup.controls[field.key].status === 'INVALID'
+                  "
+                  class="container__field__text text-error"
+                  >Wrong format</span
+                >
+              </div>
             </div>
             <input
               *ngIf="field.fieldType === 'TextField'"
