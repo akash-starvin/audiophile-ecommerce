@@ -88,6 +88,13 @@ section {
   }
 }
 
+.cash-on-delivery p {
+  @include mixins.text(15px, 400, variables.$text-black);
+  opacity: 0.5;
+  line-height: 25px;
+  padding-top: 12px;
+}
+
 .d-flex {
   display: block;
 }
@@ -116,6 +123,14 @@ section {
   .full-width,
   .full-width input {
     width: -webkit-fill-available;
+  }
+
+  .cash-on-delivery {
+    display: flex;
+    margin-bottom: 24px;
+    p {
+      padding: 0 0 0 32px;
+    }
   }
 }
 
