@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Cart } from 'src/app/product/interface/cart';
 import { Product } from 'src/app/product/interface/product';
 import { Constants } from '../../constants/Constants';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,10 @@ export class CartComponent implements OnInit {
   totalCost: number = 0;
   cartItemsCount: number = 0;
 
-  constructor(private toastrService: ToastrService) {}
+  constructor(
+    private toastrService: ToastrService,
+    private localStorageService: LocalStorageService
+  ) {}
 
   ngOnInit(): void {
     this.getLocalCartItems();
@@ -47,16 +51,9 @@ export class CartComponent implements OnInit {
   }
 
   getLocalCartItems() {
-    if (
-      localStorage.getItem(Constants.LOCAL_STORAGE_KEY) === '[]' ||
-      localStorage.getItem(Constants.LOCAL_STORAGE_KEY) === null
-    ) {
-      this.cartItems = [];
-    } else {
-      this.cartItems = JSON.parse(
-        localStorage.getItem(Constants.LOCAL_STORAGE_KEY) || '{}'
-      );
-    }
+    this.cartItems = this.localStorageService.getSavedObject(
+      Constants.LOCAL_STORAGE_CART
+    );
   }
 
   removeCartItem(index: number) {
@@ -68,11 +65,11 @@ export class CartComponent implements OnInit {
     this.cartItems = [];
     this.toastrService.error('Cart is empty!');
     this.calculateTotalCostAndCartItems();
-    this.saveToLocal(this.cartItems);
+    this.localStorageService.deleteObject(Constants.LOCAL_STORAGE_CART);
   }
 
   saveToLocal(object: Cart[]) {
-    localStorage.setItem(Constants.LOCAL_STORAGE_KEY, JSON.stringify(object));
+    this.localStorageService.saveObject(object, Constants.LOCAL_STORAGE_CART);
   }
 
   calculateTotalCostAndCartItems() {

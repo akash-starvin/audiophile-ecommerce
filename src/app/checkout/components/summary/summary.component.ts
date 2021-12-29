@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Constants } from 'src/app/core/constants/Constants';
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { Cart } from 'src/app/product/interface/cart';
 import { FormService } from '../../service/form.service';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
@@ -17,7 +18,11 @@ export class SummaryComponent implements OnInit {
   grandTotalCost: number = 0;
   vatAmount: number = 0;
 
-  constructor(public dialog: MatDialog, private formSerive: FormService) {}
+  constructor(
+    public dialog: MatDialog,
+    private formSerive: FormService,
+    private localStorageService: LocalStorageService
+  ) {}
 
   ngOnInit(): void {
     this.getLocalCartItems();
@@ -30,20 +35,13 @@ export class SummaryComponent implements OnInit {
   }
 
   getLocalCartItems() {
-    if (
-      localStorage.getItem(Constants.LOCAL_STORAGE_KEY) === '[]' ||
-      localStorage.getItem(Constants.LOCAL_STORAGE_KEY) === null
-    ) {
-      this.cartItems = [];
-    } else {
-      this.cartItems = JSON.parse(
-        localStorage.getItem(Constants.LOCAL_STORAGE_KEY) || '{}'
-      );
-    }
+    this.cartItems = this.localStorageService.getSavedObject(
+      Constants.LOCAL_STORAGE_CART
+    );
   }
 
   clearStorage() {
-    localStorage.setItem(Constants.LOCAL_STORAGE_KEY, JSON.stringify([]));
+    this.localStorageService.deleteObject(Constants.LOCAL_STORAGE_CART);
   }
 
   calculateTotalCost() {

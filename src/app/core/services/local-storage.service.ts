@@ -20,4 +20,8 @@ export class LocalStorageService {
       return JSON.parse(localStorage.getItem(path) || '{}');
     }
   }
+
+  deleteObject(path: string) {
+    localStorage.setItem(path, JSON.stringify([]));
+  }
 }

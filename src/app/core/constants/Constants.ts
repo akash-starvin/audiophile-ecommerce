@@ -1,7 +1,7 @@
 import { Menu } from '../interface/menu';
 
 export class Constants {
-  public static LOCAL_STORAGE_KEY: string = 'AudioPhileCart';
+  public static LOCAL_STORAGE_CART: string = 'AudioPhileCart';
   public static NavigationMenu: Menu[] = [
     {
       route: '/',

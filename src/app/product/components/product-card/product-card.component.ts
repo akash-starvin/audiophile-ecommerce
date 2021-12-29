@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Constants } from 'src/app/core/constants/Constants';
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { Cart } from '../../interface/cart';
 import { Product } from '../../interface/product';
 import { ProductDataService } from '../../service/product-data.service';
@@ -22,7 +23,8 @@ export class ProductCardComponent implements OnInit {
 
   constructor(
     private productDataService: ProductDataService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private localStorageService: LocalStorageService
   ) {}
 
   ngOnInit(): void {}
@@ -41,22 +43,22 @@ export class ProductCardComponent implements OnInit {
     }
   }
 
-  checkProductExistsInLocal() {
+  checkProductExists() {
     //Remove if item exists in array
     this.cartItems = this.cartItems.filter((item) => {
       return item.id !== this.data.id;
     });
     let cartItemObject = this.createCartItemObject(this.data);
-    this.toastrService.success('Added to cart!');
     this.saveToLocalStorage(cartItemObject);
   }
 
   saveToLocalStorage(cartItem: Cart) {
     this.cartItems.unshift(cartItem);
-    localStorage.setItem(
-      Constants.LOCAL_STORAGE_KEY,
-      JSON.stringify(this.cartItems)
+    this.localStorageService.saveObject(
+      this.cartItems,
+      Constants.LOCAL_STORAGE_CART
     );
+    this.toastrService.success('Added to cart!');
   }
 
   createCartItemObject(product: Product): Cart {
@@ -70,16 +72,9 @@ export class ProductCardComponent implements OnInit {
   }
 
   getLocalCartItems() {
-    if (
-      localStorage.getItem(Constants.LOCAL_STORAGE_KEY) === '[]' ||
-      localStorage.getItem(Constants.LOCAL_STORAGE_KEY) === null
-    ) {
-      this.cartItems = [];
-    } else {
-      this.cartItems = JSON.parse(
-        localStorage.getItem(Constants.LOCAL_STORAGE_KEY) || '{}'
-      );
-    }
-    this.checkProductExistsInLocal();
+    this.cartItems = this.localStorageService.getSavedObject(
+      Constants.LOCAL_STORAGE_CART
+    );
+    this.checkProductExists();
   }
 }
