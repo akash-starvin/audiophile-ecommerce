@@ -1,27 +1,36 @@
-# AudiophileEcommerce
+# Audiophile Ecommerce [Live](https://audiophile-ecommerce-akash-starvin.vercel.app/)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+## Frontend Mentor [Challenge Link](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx)
 
-## Development server
+### Key Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Responsive UI
+- Lazy loaded modules
+- Mobile-first workflow
+- Reactive Form based on JSON data
+- Local storage
+- SCSS custom properties
 
-## Code scaffolding
+### Desktop Screenshots
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+![Home-page](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/desktop/home-page.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![Listing-page](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/desktop/listing-page.png)
 
-## Running unit tests
+![Detail-page](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/desktop/product-detail.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![checkout-page](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/desktop/checkout.png)
 
-## Running end-to-end tests
+### Mobile Screenshots
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![Home-page](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/mobile/home-page.png) ![Listing-page](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/mobile/listing-page.png) ![Detail-page](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/mobile/detail-page.png) ![checkout-page](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/mobile/checkout.png)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Tablet Screenshots
+![Home-page](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/tablet/home-page.png)
+![Listing-page](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/tablet/listing-page.png)
+![Detail-page](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/tablet/detail-page.png)
+![checkout-page](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/tablet/checkout.png)
+![Cart](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/tablet/cart.png)
+![Confirmation](https://github.com/akash-starvin/audiophile-ecommerce/blob/master/screenshots/tablet/confirmation%20dialog.png)
